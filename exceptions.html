@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chapter 7: Exception Handling and Debugging</title>
+</head>
+<body>
+  <div class="hero-section">
+    <h1>🛠️ Chapter 7: Exception Handling and Debugging in Python</h1>
+    <p>Learn how to write safer and more reliable programs! In this chapter, you'll explore how to handle errors gracefully using try-except blocks, raise custom exceptions, and use debugging techniques to find and fix bugs in your code efficiently. 🐞🧰</p>
+  </div>
+  
+
+
+  <div class="section">
+    <h2>🚨 Why Exception Handling Matters</h2>
+    <blockquote>
+      “To err is human… but to handle it smartly is Pythonic!” 🧠🐍
+    </blockquote>
+    <p>Even if your code is perfect, users might:</p>
+    <ul>
+      <li>Enter wrong input (<code>ValueError</code>)</li>
+      <li>Try dividing by zero (<code>ZeroDivisionError</code>)</li>
+      <li>Refer to files that don't exist (<code>FileNotFoundError</code>)</li>
+    </ul>
+    <p>Python lets you handle these problems without crashing your app.</p>
+  </div>
+  <div class="section">
+    <h2>⚡ What is an Exception?</h2>
+    <p>An exception is a runtime error — something bad that happens while the program is running.</p>
+    
+    <h3>👇 Examples of Common Exceptions:</h3>
+    <pre><code>print(10 / 0)       # ❌ ZeroDivisionError
+  int("abc")          # ❌ ValueError
+  open("nope.txt")    # ❌ FileNotFoundError</code></pre>
+  </div>
+  
+  <div class="section">
+    <h2>🛡️ How to Handle Exceptions: try - except</h2>
+    
+    <h3>✅ Basic Syntax:</h3>
+    <pre><code>try:
+      risky_code()
+  except ErrorType:
+      handle_it()</code></pre>
+    
+    <h3>🧪 Example 1: Divide by zero</h3>
+    <pre><code>try:
+      print(10 / 0)
+  except ZeroDivisionError:
+      print("Cannot divide by zero!")</code></pre>
+    <p><strong>🖨️ Output:</strong> Cannot divide by zero!</p>
+    
+    <h3>🧪 Example 2: Invalid input</h3>
+    <pre><code>try:
+      num = int(input("Enter a number: "))
+  except ValueError:
+      print("Oops! That's not a valid number.")</code></pre>
+    
+    <h3>🧪 Example 3: File not found</h3>
+    <pre><code>try:
+      f = open("data.txt", "r")
+  except FileNotFoundError:
+      print("File not found. Please check the name.")</code></pre>
+    
+    <h3>✅ Using Multiple except Blocks</h3>
+    <pre><code>try:
+      x = int(input("Enter a number: "))
+      result = 10 / x
+  except ValueError:
+      print("Please enter a valid number.")
+  except ZeroDivisionError:
+      print("Can't divide by zero!")</code></pre>
+    
+    <h3>🎁 Bonus: finally Block</h3>
+    <p>Runs no matter what — useful to close files or clean up.</p>
+    <pre><code>try:
+      f = open("myfile.txt")
+  except FileNotFoundError:
+      print("Missing file!")
+  finally:
+      print("This block runs no matter what.")</code></pre>
+
+    <div class="joke">
+      😅 You: “What’s your age?”<br>
+      User: “Two cats and a banana.” 🐱🍌<br>
+      Your code: 💀 dies with ValueError
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🛡️ Python to the Rescue: try...except</h2>
+    <pre><code>try:
+    x = int(input("Enter a number: "))
+    print(100 / x)
+except ZeroDivisionError:
+    print("Oops! Can't divide by 0.")
+except ValueError:
+    print("That was not a number!")</code></pre>
+
+    <h3>🧪 Output:</h3>
+    <pre><code>Enter a number: 0
+Oops! Can't divide by 0.</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔁 Multiple except Blocks</h2>
+    <pre><code>try:
+    num = int(input("Enter number: "))
+    result = 10 / num
+except ValueError:
+    print("Only numbers allowed!")
+except ZeroDivisionError:
+    print("Don't divide by 0, please.")</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🧼 finally: Always Executes</h2>
+    <pre><code>try:
+    f = open("file.txt", "r")
+    data = f.read()
+except FileNotFoundError:
+    print("File missing!")
+finally:
+    print("Closing program.")</code></pre>
+    <p>Even if there’s an error, <code>finally</code> block runs — like brushing your teeth before bed 😄</p>
+  </div>
+
+  <div class="section">
+    <h2>🛠️ else: Runs only if no exception</h2>
+    <pre><code>try:
+    x = 5
+    y = 2
+    result = x / y
+except:
+    print("Something went wrong.")
+else:
+    print("Everything worked fine!")</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔧 Real-World Scenario: Login System</h2>
+    <pre><code>try:
+    username = input("Username: ")
+    if username == "":
+        raise ValueError("Username can't be blank")
+    print("Welcome,", username)
+except ValueError as e:
+    print("Error:", e)</code></pre>
+  </div>
+
+  <div class="quiz-section">
+    <h2>🧠 QUIZ TIME!</h2>
+  
+    <div class="quiz-question">
+      <p>Q1. What happens when an exception is not handled?</p>
+      <ul>
+        <li onclick="checkAnswer(this, 'wrong')">a) Python skips the error</li>
+        <li onclick="checkAnswer(this, 'correct')">b) The program crashes</li>
+        <li onclick="checkAnswer(this, 'wrong')">c) It retries the code</li>
+        <li onclick="checkAnswer(this, 'wrong')">d) Nothing happens</li>
+      </ul>
+    </div>
+  
+    <div class="quiz-question">
+      <p>Q2. What will this print?</p>
+      <pre><code>try:
+      x = 10 / 0
+  except ZeroDivisionError:
+      print("Math Error")</code></pre>
+      <ul>
+        <li onclick="checkAnswer(this, 'wrong')">a) Nothing</li>
+        <li onclick="checkAnswer(this, 'wrong')">b) 0</li>
+        <li onclick="checkAnswer(this, 'correct')">c) Math Error</li>
+        <li onclick="checkAnswer(this, 'wrong')">d) Syntax Error</li>
+      </ul>
+
+    </div>
+  
+    <div class="quiz-question">
+      <p>Q3. What is the output?</p>
+      <pre><code>try:
+      int("xyz")
+  except ValueError:
+      print("Invalid!")</code></pre>
+    </div>
+  
+    <div class="quiz-question">
+      <p>Q4. Which keyword ensures code runs no matter what?</p>
+      <ul>
+        <li onclick="checkAnswer(this, 'wrong')">a) try</li>
+        <li onclick="checkAnswer(this, 'wrong')">b) ensure</li>
+        <li onclick="checkAnswer(this, 'wrong')">c) always</li>
+        <li onclick="checkAnswer(this, 'correct')">d) finally</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🚨 Part 2: Debugging Tips 🕵️</h2>
+    
+    <h3>🔎 What is Debugging?</h3>
+    <p>Debugging is the process of identifying, analyzing, and fixing errors (bugs) in your program.</p>
+    <p>Every coder, from beginner to pro, faces bugs. The key difference? Pros debug efficiently.</p>
+  </div>
+  
+  <div class="section">
+    <h2>🧰 Common Tools & Techniques for Debugging in Python</h2>
+    
+    <div class="subsection">
+      <h3>1. print() Debugging – Old But Gold 💬</h3>
+      <p>The simplest and most effective way is adding print() statements in your code to check values.</p>
+      
+      <h4>✅ Example:</h4>
+      <pre><code>def calculate_area(length, width):
+      print("Length:", length)   # Debug line
+      print("Width:", width)     # Debug line
+      return length * width
+  
+  print("Area:", calculate_area(5, 2))</code></pre>
+      <h4>🖨️ Output:</h4>
+      <pre>Length: 5
+  Width: 2
+  Area: 10</pre>
+      <p>You can use print to trace variable values, check flow, or isolate logic bugs.</p>
+    </div>
+  
+    <div class="subsection">
+      <h3>2. Using IDE Debuggers 🧠 (VS Code, PyCharm, Thonny)</h3>
+      <p>Modern editors have visual debuggers where you can:</p>
+      <ul>
+        <li>Set breakpoints</li>
+        <li>Step through code line by line</li>
+        <li>Inspect variable values during execution</li>
+      </ul>
+      <h4>✅ Recommended if you're using:</h4>
+      <ul>
+        <li>Thonny – perfect for beginners</li>
+        <li>VS Code / PyCharm – powerful for pros</li>
+      </ul>
+    </div>
+  
+    <div class="subsection">
+      <h3>3. The pdb Module – Python's Built-in Debugger</h3>
+      <p>Python includes a command-line debugger called pdb.</p>
+      
+      <h4>🔍 Example:</h4>
+      <pre><code>import pdb
+  
+  def add(x, y):
+      pdb.set_trace()  # Debugger will pause here
+      return x + y
+  
+  print(add(10, 5))</code></pre>
+      <p>🧭 At the prompt ((Pdb)), you can type commands like:</p>
+      <ul>
+        <li><code>n</code> → next line</li>
+        <li><code>c</code> → continue</li>
+        <li><code>p x</code> → print value of x</li>
+        <li><code>q</code> → quit debugger</li>
+      </ul>
+    </div>
+  
+    <div class="subsection">
+      <h3>🧪 Bonus Technique: assert – Quick Checks</h3>
+      <p>Use assert to catch issues early by testing assumptions.</p>
+      <pre><code>def divide(a, b):
+      assert b != 0, "b should not be zero!"  # Throws AssertionError if condition fails
+      return a / b</code></pre>
+      <p>If you call:</p>
+      <pre><code>divide(10, 0)</code></pre>
+      <h4>🛑 Output:</h4>
+      <pre>AssertionError: b should not be zero!</pre>
+      <p>Use assert when you want to ensure certain conditions hold true during development/testing.</p>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h3>🧠 Pro Debugging Strategy</h3>
+    <p>✅ Combine all tools:</p>
+    <ul>
+      <li>Use print() for quick tracing</li>
+      <li>Use assert for validation</li>
+      <li>Use pdb/IDE for detailed inspection</li>
+    </ul>
+  </div>
+  
+  <div class="section">
+    <h3>🧩 Real-Life Debugging Example</h3>
+    <pre><code>def calculate_discount(price, discount_percent):
+      # Problem: returns wrong value sometimes
+      print("Debug Info:", price, discount_percent)
+      assert discount_percent <= 100, "Discount can't be over 100%"
+      return price - (price * discount_percent / 100)
+  
+  print(calculate_discount(100, 25))  # ✅ 75
+  print(calculate_discount(100, 150)) # ❌ triggers assert</code></pre>
+  </div>
+
+  <div class="quiz-section">
+    <h2>🧠 QUIZ TIME! (Debugging Edition)</h2>
+  
+    <div class="quiz-question">
+      <p>Q1. What does assert do?</p>
+      <ul>
+        <li onclick="checkAnswer(this, 'wrong')">a) Loops over errors</li>
+        <li onclick="checkAnswer(this, 'correct')">b) Stops program if condition is False</li>
+        <li onclick="checkAnswer(this, 'wrong')">c) Continues the program always</li>
+        <li onclick="checkAnswer(this, 'wrong')">d) None</li>
+      </ul>
+    </div>
+  
+    <div class="quiz-question">
+      <p>Q2. Which tool allows step-by-step debugging?</p>
+      <ul>
+        <li onclick="checkAnswer(this, 'wrong')">a) print</li>
+        <li onclick="checkAnswer(this, 'wrong')">b) while loop</li>
+        <li onclick="checkAnswer(this, 'correct')">c) IDE Debugger</li>
+        <li onclick="checkAnswer(this, 'wrong')">d) for loop</li>
+      </ul>
+    </div>
+  
+    <div class="quiz-question">
+      <p>Q3. What does pdb.set_trace() do?</p>
+      <ul>
+        <li onclick="checkAnswer(this, 'wrong')">a) Deletes a variable</li>
+        <li onclick="checkAnswer(this, 'wrong')">b) Prints a message</li>
+        <li onclick="checkAnswer(this, 'correct')">c) Starts an interactive debugger</li>
+        <li onclick="checkAnswer(this, 'wrong')">d) None of these</li>
+      </ul>
+ 
+    </div>
+  
+    <div class="quiz-question">
+      <p>Q4. What's the best tool for quick bug tracing?</p>
+      <ul>
+        <li onclick="checkAnswer(this, 'wrong')">a) import os</li>
+        <li onclick="checkAnswer(this, 'correct')">b) print()</li>
+        <li onclick="checkAnswer(this, 'wrong')">c) exec()</li>
+        <li onclick="checkAnswer(this, 'wrong')">d) traceback</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="challenge-section">
+    <h2>🛠️ Challenge Task</h2>
+    <p>Fix this buggy code using debugging tools:</p>
+    
+    <pre><code>def calc_total(price, tax):
+      return price + price * tax  # Something's off here
+  
+  print(calc_total("100", 0.1))  # TypeError?</code></pre>
+    
+    <div class="hint">
+      <h3>🧩 Hint:</h3>
+      <p>Use <code>print()</code> and <code>assert</code> to check data types.</p>
+    </div>
+    
+    <div class="solution" style="display: none;">
+      <h3>💡 Solution:</h3>
+      <pre><code>def calc_total(price, tax):
+      # Debugging with print and assert
+      print("Price type:", type(price))
+      print("Tax type:", type(tax))
+      assert isinstance(price, (int, float)), "Price must be numeric"
+      assert isinstance(tax, (int, float)), "Tax must be numeric"
+      
+      # Convert price to float if it's a string
+      if isinstance(price, str):
+          price = float(price)
+      
+      return price + price * tax
+  
+  print(calc_total("100", 0.1))  # Now works: 110.0</code></pre>
+      <p>🔍 <strong>Key Fixes:</strong></p>
+      <ol>
+        <li>Added type checking with <code>assert</code></li>
+        <li>Added <code>print()</code> statements to verify types</li>
+        <li>Converted string input to float</li>
+        <li>Handled the type mismatch that caused the original TypeError</li>
+      </ol>
+    </div>
+    <button onclick="toggleSolution(this)">Show Solution</button>
+  </div>
+
+  <div class="quiz">
+    <h2>🎯 Quiz Time!</h2>
+    <div class="quiz-question">
+        <p>1. What is an exception?</p>
+        <ul>
+          <li onclick="checkAnswer(this, 'wrong')">a) A virus</li>
+          <li onclick="checkAnswer(this, 'correct')">b) A runtime error</li>
+          <li onclick="checkAnswer(this, 'wrong')">c) A Python command</li>
+        </ul>
+      </div>
+      
+      <div class="quiz-question">
+        <p>2. Which block is always executed?</p>
+        <ul>
+          <li onclick="checkAnswer(this, 'wrong')">a) try</li>
+          <li onclick="checkAnswer(this, 'wrong')">b) except</li>
+          <li onclick="checkAnswer(this, 'correct')">c) finally</li>
+        </ul>
+      </div>
+      
+      <div class="quiz-question">
+        <p>3. What does this code print?</p>
+        <pre>try:
+          print(1 / 0)
+      except:
+          print("Error!")
+      finally:
+          print("Done.")</pre>
+        <ul>
+          <li onclick="checkAnswer(this, 'correct')">a) Error!</li>
+          <li onclick="checkAnswer(this, 'wrong')">c) 0</li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="challenge">
+    <h2>🧠 Challenge Task</h2>
+    <p>Write a program that:</p>
+    <ol>
+      <li>Takes two numbers from the user</li>
+      <li>Divides them</li>
+      <li>Catches <code>ZeroDivisionError</code> and <code>ValueError</code></li>
+      <li>Prints result only if no error</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>🧾 Summary Table</h2>
+    <table>
+      <tr><th>Keyword</th><th>Purpose</th></tr>
+      <tr><td>try</td><td>Wrap code that might error</td></tr>
+      <tr><td>except</td><td>Handle specific error</td></tr>
+      <tr><td>else</td><td>Runs only if no error occurs</td></tr>
+      <tr><td>finally</td><td>Always runs (cleanup, closing files etc.)</td></tr>
+      <tr><td>raise</td><td>Throw custom error manually</td></tr>
+      <tr><td>assert</td><td>Check conditions and raise error if false</td></tr>
+    </table>
+  </div>
+
+</body>
+</html>

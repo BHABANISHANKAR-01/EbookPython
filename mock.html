@@ -1,0 +1,3314 @@
+<div class="quiz-question">
+    <p>1. You need to complete a function that prints a right-angled triangle pattern made of stars (*) with 5 rows. How should you complete the code?</p>
+    <pre>def print_triangle():
+    1 --------
+        2 ----------
+            print("*", end="")
+        print()
+print_triangle()</pre>
+    <ul>
+      <li onclick="checkAnswer(this, 'correct')">A) for row in range(1, 6):<br>    for col in range(row):</li>
+      <li onclick="checkAnswer(this, 'wrong')">B) for row in range(6):<br>    for col in range(5):</li>
+      <li onclick="checkAnswer(this, 'wrong')">C) for col in range(5):<br>    for row in range(6):</li>
+      <li onclick="checkAnswer(this, 'wrong')">D) for row in range(1, 5):<br>    for col in range(6):</li>
+    </ul>
+
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+    <div class="answer" style="display: none;">
+        <pre><code># Pattern printing using nested loops
+    for row in range(1, 6):
+        for col in range(row):
+            print("*", end="")
+        print()</code></pre>
+    
+        <h4>✅ Output:</h4>
+        <pre>*
+        **
+        ***
+        ****
+        *****</pre>
+    
+        <h4>🧠 Explanation:</h4>
+        <ul>
+            <li>The outer loop <code>for row in range(1, 6)</code> runs from 1 to 5, creating 5 rows.</li>
+            <li>The inner loop <code>for col in range(row)</code> prints stars (<strong>*</strong>) equal to the row number.</li>
+            <li><strong>Breakdown:</strong>
+                <ul>
+                    <li>Row 1 → 1 star (<strong>*</strong>)</li>
+                    <li>Row 2 → 2 stars (<strong>**</strong>)</li>
+                    <li>Row 3 → 3 stars (<strong>***</strong>)</li>
+                    <li>Row 4 → 4 stars (<strong>****</strong>)</li>
+                    <li>Row 5 → 5 stars (<strong>*****</strong>)</li>
+                </ul>
+            </li>
+            <li><strong>print("*", end="")</strong> keeps stars on the same line, while <strong>print()</strong> moves to the next line after each row.</li>
+        </ul>
+    </div>
+</div>
+<div class="quiz-question">
+    <p>You need to complete a function that computes and displays all multiplication table combinations from 2 to 12. How should you complete the code?</p>
+    <pre>
+def times_tables():
+    # 1 -------
+    # 2 ---------
+        print(row * col, end=" ")
+    print()
+
+times_tables()
+    </pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">
+            A) for col in range(2, 13):<br>&nbsp;&nbsp;&nbsp;&nbsp;for row in range(2, 13):
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            B) for col in range(2, 13):<br>&nbsp;&nbsp;&nbsp;&nbsp;for row in range(2, 13):
+        </li>
+        <li onclick="checkAnswer(this, 'correct')">
+            C) for row in range(2, 13):<br>&nbsp;&nbsp;&nbsp;&nbsp;for col in range(2, 13):
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            D) for row in range(2, 13):<br>&nbsp;&nbsp;&nbsp;&nbsp;for col in range(2, 13):
+        </li>
+    </ul>
+</div>
+<div class="quiz-question">
+    <p>2. You need to complete a function that prints the sum of all even numbers between 1 and 20. How should you complete the missing code?</p>
+    <pre>def sum_even():
+        total = 0
+        1 ----------
+            if num % 2 == 0:
+                total += num
+        print(total)
+    sum_even()</pre>
+    <ul>
+      <li onclick="checkAnswer(this, 'correct')">A) for num in range(1, 21):</li>
+      <li onclick="checkAnswer(this, 'wrong')">B) for num in range(2, 21, 2):</li>
+      <li onclick="checkAnswer(this, 'wrong')">C) for num in range(1, 20):</li>
+      <li onclick="checkAnswer(this, 'wrong')">D) for num in range(0, 20, 2):</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Complete even number summation function
+def sum_even():
+    total = 0
+    for num in range(1, 21):  # Correct loop range
+        if num % 2 == 0:      # Check if number is even
+            total += num      # Add to total if even
+    print(total)              # Print final sum
+
+sum_even()  # Output: 110</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This function sums all even numbers between 1 and 20 (inclusive).</p>
+
+    <h4>🔍 Why Option A is Correct:</h4>
+    <ul>
+        <li><strong>range(1, 21)</strong> generates numbers 1 through 20</li>
+        <li>The <strong>if num % 2 == 0</strong> condition properly checks for even numbers</li>
+        <li>Matches the existing code structure that expects to filter even numbers</li>
+        <li>Correctly sums all even numbers in the specified range</li>
+    </ul>
+
+    <h4>✅ Numbers Processed:</h4>
+    <p>Even numbers between 1-20: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20</p>
+    <p>Sum = 2 + 4 + 6 + 8 + 10 + 12 + 14 + 16 + 18 + 20 = 110</p>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Code</th>
+            <th>Issue</th>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td><strong>for num in range(2, 21, 2)</strong></td>
+            <td>Only generates evens (2,4,6...20) making the if check redundant</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td><strong>for num in range(1, 20)</strong></td>
+            <td>Misses the last even number (20)</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td><strong>for num in range(0, 20, 2)</strong></td>
+            <td>Includes 0 (not in 1-20) and misses 20</td>
+        </tr>
+    </table>
+
+    <h4>💡 Alternative Implementations:</h4>
+    <pre><code># Version using step parameter (no if check needed)
+def sum_even_v2():
+    print(sum(range(2, 21, 2)))  # Output: 110
+
+# One-line version
+sum_even_v3 = lambda: print(sum(n for n in range(1,21) if n%2==0))</code></pre>
+</div>
+</div>
+
+<div class="quiz-question">
+    <p>3. You are analyzing lab test results stored in a list called results with 1000 entries. You want to get the first 10 results in reverse order. Which of the following slice expressions should you use?</p>
+    <ul>
+      <li onclick="checkAnswer(this, 'wrong')">A) results[10:0:-1]</li>
+      <li onclick="checkAnswer(this, 'correct')">B) results[9::-1]</li>
+      <li onclick="checkAnswer(this, 'wrong')">C) results[:10:-1]</li>
+      <li onclick="checkAnswer(this, 'wrong')">D) results[::-1][:10]</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Get first 10 results in reverse order
+reversed_first_10 = results[9::-1]</code></pre>
+
+    <h4>✅ Output:</h4>
+    <pre>[results[9], results[8], ..., results[0]]</pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>We need to get the first 10 results from the list results in reverse order.</p>
+    
+    <p><strong>✅ Step-by-step:</strong></p>
+    <p>The first 10 results are: <code>results[0] to results[9]</code></p>
+    <p>To reverse them, we must start from <code>results[9]</code> and go backward to <code>results[0]</code>.</p>
+    
+    <p><strong>🔍 Understanding the Slice:</strong></p>
+    <p><code>results[9::-1]</code></p>
+    <ul>
+        <li><strong>9</strong> = start index (10th item)</li>
+        <li><strong>::-1</strong> = step of -1 (reverse)</li>
+        <li>No explicit stop index → it stops at the beginning (index 0)</li>
+    </ul>
+    <p>So this gives: <code>[results[9], results[8], ..., results[0]]</code></p>
+    <p>✔️ Exactly first 10 elements in reverse order.</p>
+    
+    <p><strong>❌ Why Other Options Are Incorrect:</strong></p>
+    <ul>
+        <li><strong>A) results[10:0:-1]</strong><br>
+        Starts at index 10, ends at index 1 (not 0), so it excludes results[0].<br>
+        Gives only 9 items.</li>
+        
+        <li><strong>C) results[:10:-1]</strong><br>
+        Starts from end (default) and tries to stop at index 10.<br>
+        ❌ Returns an empty list because slicing in reverse needs start > stop.</li>
+        
+        <li><strong>D) results[::-1][:10]</strong><br>
+        Reverses the entire list first (all 1000 items), then takes the first 10 of that reversed list.<br>
+        ❌ This gives the last 10 elements of the original list, not the first 10.</li>
+    </ul>
+</div>
+</div>
+
+<div class="quiz-question">
+    <p>4. You have a list days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]. You want to get only the weekend days, which are at the end of the list. Which slice expression will give you ["Sat", "Sun"]?</p>
+    <ul>
+      <li onclick="checkAnswer(this, 'correct')">A) days[-2:]</li>
+      <li onclick="checkAnswer(this, 'correct')">B) days[5:]</li>
+      <li onclick="checkAnswer(this, 'wrong')">C) days[6:]</li>
+      <li onclick="checkAnswer(this, 'correct')">D) Both A and B</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Given list
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+# Correct ways to get ["Sat", "Sun"]
+option_a = days[-2:]  # A) Using negative indexing
+option_b = days[5:]   # B) Using positive indexing</code></pre>
+
+    <h4>✅ Output:</h4>
+    <pre>["Sat", "Sun"]</pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>You are given:</p>
+    <pre><code>days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]</code></pre>
+    <p>And you want to extract: <code>["Sat", "Sun"]</code></p>
+    <p>These are the last two elements of the list.</p>
+
+    <p><strong>🔍 Let's understand both correct options:</strong></p>
+    <p><strong>✅ A) days[-2:]</strong></p>
+    <ul>
+        <li><code>-2</code> refers to the second last element, which is "Sat"</li>
+        <li>So <code>days[-2:]</code> means: <code>["Sat", "Sun"]</code></li>
+    </ul>
+
+    <p><strong>✅ B) days[5:]</strong></p>
+    <ul>
+        <li>Index 5 = "Sat"</li>
+        <li>Index 6 = "Sun"</li>
+        <li>So <code>days[5:]</code> also means: <code>["Sat", "Sun"]</code></li>
+    </ul>
+
+    <p>Both expressions give the same result, just written differently (one uses negative index, the other uses positive).</p>
+
+    <p><strong>❌ Why Other Options Are Wrong:</strong></p>
+    <p><strong>C) days[6:]</strong><br>
+    Only includes <code>["Sun"]</code> → missing "Sat" ❌</p>
+</div>
+</div>
+<div class="quiz-question">
+    <p>You develop a Python application for your school. A list named <code>colors</code> contains 500 colors. You need to slice the list to display every other color starting with the second color.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) colors[1:500:2]</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) colors[1:2]</li>
+        <li onclick="checkAnswer(this, 'correct')">C) colors[1::2]</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) colors[2:2]</li>
+    </ul>
+</div>
+<!-- Question 5 -->
+<div class="quiz-question">
+    <p>5. Linear Search with Return. You are creating a function to search for a number in a list and return True if found, otherwise return False.</p>
+    <p>Code Segments:</p>
+    <ul>
+        <li>A - for i in range(len(numbers)):</li>
+        <li>B - if numbers[i] == target:</li>
+        <li>C - return True</li>
+        <li>D - def find_number(numbers, target):</li>
+        <li>E - return False</li>
+    </ul>
+    <p>In which order should you arrange them?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) A, B, C, D, E</li>
+        <li onclick="checkAnswer(this, 'correct')">B) D, A, B, C, E</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) D, B, A, C, E</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) A, D, B, C, E</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Correct linear search implementation
+def find_number(numbers, target):  # D) Function definition
+    for i in range(len(numbers)):  # A) Loop through list
+        if numbers[i] == target:   # B) Check if element matches target
+            return True            # C) Return True if found
+    return False                   # E) Return False if not found</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>We are building a linear search function that:</p>
+    <ul>
+        <li>Takes a list <code>numbers</code> and a <code>target</code> number</li>
+        <li>Loops through the list</li>
+        <li>Returns <code>True</code> if the target is found</li>
+        <li>Returns <code>False</code> if not found</li>
+    </ul>
+
+    <p><strong>Code Blocks Analysis:</strong></p>
+    <table>
+        <tr>
+            <th>Label</th>
+            <th>Code</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td><code>def find_number(numbers, target):</code></td>
+            <td>✅ Function definition</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td><code>for i in range(len(numbers)):</code></td>
+            <td>✅ Loop through list</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td><code>if numbers[i] == target:</code></td>
+            <td>✅ Check if element matches target</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td><code>return True</code></td>
+            <td>✅ If found, return True</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td><code>return False</code></td>
+            <td>✅ If loop ends without finding, return False</td>
+        </tr>
+    </table>
+
+    <p><strong>🔧 Correct Sequence:</strong></p>
+    <ol>
+        <li>D - Function definition</li>
+        <li>A - Loop through list</li>
+        <li>B - Check current value</li>
+        <li>C - Return True if found</li>
+        <li>E - Return False if not found</li>
+    </ol>
+</div>
+</div>
+<div class="quiz-question">
+    <p>Which data types store numeric values and are created when you assign a value to them?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) long</li>
+        <li onclick="checkAnswer(this, 'correct')">B) int</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) str</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) bool</li>
+    </ul>
+</div>
+<!-- Question 6 -->
+<div class="quiz-question">
+    <p>6. Which of the following data types in Python can store floating-point (decimal) values?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) float</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) int</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) bool</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) str</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Examples of float numbers in Python
+num1 = 3.14
+num2 = 0.5
+num3 = -7.89
+num4 = 100.0
+
+print(type(num1))  # &lt;class 'float'&gt;
+print(type(num2))  # &lt;class 'float'&gt;
+print(type(num3))  # &lt;class 'float'&gt;
+print(type(num4))  # &lt;class 'float'&gt;</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>In Python, floating-point numbers (also called decimals) are numbers that have a decimal point. Examples:</p>
+    <pre><code>3.14, 0.5, -7.89, 100.0</code></pre>
+    <p>These types of numbers are stored using the <code>float</code> data type.</p>
+
+    <h4>🔍 Breakdown of Options:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Explanation</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><strong>✅ A) float</strong></td>
+            <td>✔️ Correct<br>Stores decimal numbers (floating-point values)</td>
+            <td><code>x = 3.14<br>print(type(x))  # &lt;class 'float'&gt;</code></td>
+        </tr>
+        <tr>
+            <td><strong>❌ B) int</strong></td>
+            <td>Stores whole numbers only (no decimals)</td>
+            <td><code>1, 99, -7<br>Cannot store 3.14</code></td>
+        </tr>
+        <tr>
+            <td><strong>❌ C) bool</strong></td>
+            <td>Boolean values: True or False<br>Not used for numeric storage</td>
+            <td><code>True (1), False (0)</code></td>
+        </tr>
+        <tr>
+            <td><strong>❌ D) str</strong></td>
+            <td>String data type → stores text, not numbers</td>
+            <td><code>"3.14" is a string</code></td>
+        </tr>
+    </table>
+
+    <h4>Key Points:</h4>
+    <ul>
+        <li>Use <code>float</code> for any number with a decimal point</li>
+        <li>Even whole numbers with decimal point (like 100.0) are floats</li>
+        <li>Python automatically converts numbers with decimals to float type</li>
+    </ul>
+</div>
+</div>
+
+<!-- Question 7 -->
+<div class="quiz-question">
+    <p>7. Which of the following data types can be used in arithmetic operations like addition or multiplication?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) int and float</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) str and bool</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) list and str</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) dict and tuple</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Examples of arithmetic operations with int and float
+a = 10       # int
+b = 3.5      # float
+
+print(a + b)  # Output: 13.5 (float)
+print(a * 2)  # Output: 20 (int)
+print(b / 2)  # Output: 1.75 (float)</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>In Python, arithmetic operations like addition (+), subtraction (-), multiplication (*), and division (/) are typically performed on numeric data types.</p>
+
+    <h4>🔢 int and float:</h4>
+    <ul>
+        <li><strong>int</strong>: whole numbers like 5, -10, 100</li>
+        <li><strong>float</strong>: decimal numbers like 3.14, 0.5, -2.7</li>
+    </ul>
+    <p>Both can be used in math expressions and will work together seamlessly, with the result typically being a float if either operand is a float.</p>
+
+    <h4>❌ Why the Others Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Explanation</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><strong>B) str and bool</strong></td>
+            <td>
+                <ul>
+                    <li>str: Supports concatenation but not real arithmetic</li>
+                    <li>bool: True/False behave like 1/0 but not meant for arithmetic</li>
+                </ul>
+            </td>
+            <td>
+                <pre><code>print("a" + "b")  # "ab"
+print(True + 5)  # 6</code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>C) list and str</strong></td>
+            <td>
+                <ul>
+                    <li>Support repetition/concatenation but not numeric operations</li>
+                </ul>
+            </td>
+            <td>
+                <pre><code>print([1,2] + [3,4])  # [1,2,3,4]
+print("Hi" * 3)     # "HiHiHi"</code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>D) dict and tuple</strong></td>
+            <td>
+                <ul>
+                    <li>Don't support arithmetic operations</li>
+                    <li>Tuple only supports repetition</li>
+                </ul>
+            </td>
+            <td>
+                <pre><code>print((1,2) * 2)        # (1,2,1,2)
+print({"a":1} + {"b":2})  # ❌ TypeError</code></pre>
+            </td>
+        </tr>
+    </table>
+
+    <h4>Key Takeaways:</h4>
+    <ul>
+        <li>For mathematical operations, use <strong>int</strong> and <strong>float</strong></li>
+        <li>Other types may support some operations but aren't designed for arithmetic</li>
+        <li>Python will automatically convert int to float when mixed in operations</li>
+    </ul>
+</div>
+</div>
+<div class="quiz-question">
+    <p>How many stars (*) does the following snippet print?</p>
+    <pre>
+i = 10
+while i > 0:
+    i -= 3
+    print("*")
+    if i <= 3:
+        break
+else:
+    print("*")
+    </pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) Three</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) The code is erroneous</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Two</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) One</li>
+    </ul>
+</div>
+<!-- Question 8 -->
+<div class="quiz-question">
+    <p>8. How many stars (*) will the following snippet print?</p>
+    <pre>count = 0
+while count < 5:
+    if count % 2 == 0:
+        print("*")
+    count += 1</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 2</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 3</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 4</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 5</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Code to analyze
+count = 0
+while count < 5:
+    if count % 2 == 0:
+        print("*")
+    count += 1</code></pre>
+
+    <h4>✅ Output:</h4>
+    <pre>*
+*
+*</pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>Let's analyze the code step by step:</p>
+
+    <h4>🔍 Step-by-Step Execution:</h4>
+    <p>Tracking <strong>count</strong> and printing behavior:</p>
+    
+    <table>
+        <tr>
+            <th>count</th>
+            <th>count % 2 == 0?</th>
+            <th>Print *?</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0 % 2 == 0 → ✅ True</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1 % 2 == 0 → ❌ False</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2 % 2 == 0 → ✅ True</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>3 % 2 == 0 → ❌ False</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>4 % 2 == 0 → ✅ True</td>
+            <td>Yes</td>
+        </tr>
+    </table>
+
+    <h4>🔢 Final Count:</h4>
+    <p>The code prints <strong>*</strong> <strong>3 times</strong> - when count equals 0, 2, and 4.</p>
+
+    <h4>💡 Key Observations:</h4>
+    <ul>
+        <li>The loop runs 5 times (count values 0 through 4)</li>
+        <li>Prints only on even numbers (when count % 2 equals 0)</li>
+        <li>There are 3 even numbers in 0-4: 0, 2, and 4</li>
+    </ul>
+</div>
+</div>
+<div class="quiz-question">
+    <p>An object variable is a variable that is stored separately in every object.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) True</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) False</li>
+    </ul>
+</div>
+<!-- Question 9 -->
+<div class="quiz-question">
+    <p>9. How many times will "Hello" be printed?</p>
+    <pre>i = 3
+while i > 0:
+    print("Hello")
+    i -= 1
+else:
+    print("Done")</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 1</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) 2</li>
+        <li onclick="checkAnswer(this, 'correct')">C) 3</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 4</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># While-else loop example
+i = 3
+while i > 0:
+    print("Hello")
+    i -= 1
+else:
+    print("Done")</code></pre>
+
+    <h4>✅ Output:</h4>
+    <pre>Hello
+Hello
+Hello
+Done</pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>Let's analyze the code execution:</p>
+
+    <h4>🔁 Loop Behavior:</h4>
+    <ul>
+        <li>Initial value: <strong>i = 3</strong></li>
+        <li>Loop condition: <strong>while i > 0</strong></li>
+        <li>Loop body: Prints "Hello" and decrements <strong>i</strong></li>
+        <li>Else clause: Executes after normal loop completion</li>
+    </ul>
+
+    <h4>🔍 Step-by-Step Execution:</h4>
+    <table>
+        <tr>
+            <th>Iteration</th>
+            <th>i before</th>
+            <th>Condition (i > 0)</th>
+            <th>Output</th>
+            <th>i after</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>✅ True</td>
+            <td>Hello</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>✅ True</td>
+            <td>Hello</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>1</td>
+            <td>✅ True</td>
+            <td>Hello</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>0</td>
+            <td>❌ False</td>
+            <td>Loop exits</td>
+            <td>-</td>
+        </tr>
+    </table>
+
+    <h4>💡 Key Points:</h4>
+    <ul>
+        <li>The loop runs exactly <strong>3 times</strong> (for i=3,2,1)</li>
+        <li>The <strong>else</strong> block executes <strong>once</strong> after the loop completes normally</li>
+        <li>This produces 3 "Hello" prints and 1 "Done" print</li>
+        <li>The <strong>else</strong> clause is unique to Python's while loops</li>
+    </ul>
+</div>
+</div>
+
+<!-- Question 10 -->
+<div class="quiz-question">
+    <p>10. Which of the following symbols is used to compare two values for equality in Python?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) ==</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) =</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) !=</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) :=</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Equality comparison examples
+x = 5
+y = 5
+
+# Correct equality check
+print(x == y)  # Output: True</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>In Python, the <code>==</code> operator is used for equality comparison between two values.</p>
+
+    <h4>🔍 Key Characteristics:</h4>
+    <ul>
+        <li><strong>Returns True</strong> if both values are equal</li>
+        <li><strong>Returns False</strong> if values are different</li>
+        <li>Works with all data types (numbers, strings, lists, etc.)</li>
+        <li>Different from assignment (<code>=</code>)</li>
+    </ul>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Operator</th>
+            <th>Name</th>
+            <th>Purpose</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><code>=</code></td>
+            <td>Assignment</td>
+            <td>Stores a value in a variable</td>
+            <td><code>x = 10</code></td>
+        </tr>
+        <tr>
+            <td><code>!=</code></td>
+            <td>Not equal</td>
+            <td>Checks if values are different</td>
+            <td><code>5 != 3 → True</code></td>
+        </tr>
+        <tr>
+            <td><code>:=</code></td>
+            <td>Walrus operator</td>
+            <td>Assignment within expressions</td>
+            <td><code>if (n := 10) > 5: ...</code></td>
+        </tr>
+    </table>
+
+    <h4>💡 Important Notes:</h4>
+    <ul>
+        <li><code>==</code> compares <strong>values</strong>, not memory locations (use <code>is</code> for identity comparison)</li>
+        <li>For strings, comparison is case-sensitive (<code>"Hello" == "hello" → False</code>)</li>
+        <li>With floating-point numbers, be cautious of precision issues</li>
+    </ul>
+</div>
+</div>
+
+<!-- Question 11 -->
+<div class="quiz-question">
+    <p>11. Which of the following is NOT a valid assignment statement in Python?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) x = 10</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) total = a + b</li>
+        <li onclick="checkAnswer(this, 'correct')">C) 5 = x</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) name = "Aman"</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Valid and invalid assignments in Python
+x = 10            # ✅ Valid
+total = a + b      # ✅ Valid (if a and b exist)
+name = "Aman"      # ✅ Valid
+5 = x              # ❌ SyntaxError</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>In Python, assignment statements must follow this pattern:</p>
+    <pre><code>&lt;variable_name&gt; = &lt;value or expression&gt;</code></pre>
+
+    <h4>❌ Why Option C is Invalid:</h4>
+    <ul>
+        <li><code>5 = x</code> tries to assign to a literal number</li>
+        <li>The left side must be a variable name, not a constant</li>
+        <li>This will raise a <code>SyntaxError</code></li>
+        <li>Error message would be: <code>"can't assign to literal"</code></li>
+    </ul>
+
+    <h4>✅ Why Other Options Are Valid:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Explanation</th>
+        </tr>
+        <tr>
+            <td><code>x = 10</code></td>
+            <td>✅ Valid - assigns integer to variable</td>
+        </tr>
+        <tr>
+            <td><code>total = a + b</code></td>
+            <td>✅ Valid - assigns expression result (if variables exist)</td>
+        </tr>
+        <tr>
+            <td><code>name = "Aman"</code></td>
+            <td>✅ Valid - assigns string to variable</td>
+        </tr>
+    </table>
+
+    <h4>💡 Key Rules for Assignments:</h4>
+    <ul>
+        <li>Left side must be a valid variable name (identifier)</li>
+        <li>Right side can be any expression that produces a value</li>
+        <li>You cannot assign to literals (numbers, strings) or expressions</li>
+        <li>Variable names must follow Python naming conventions</li>
+    </ul>
+</div>
+</div>
+<div class="quiz-question">
+    <p>8. What is the output of the following print statement?</p>
+    <pre>
+S1 = 'Indian Army is our Pride'
+print(len(S1))
+    </pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 25</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) 21</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 23</li>
+        <li onclick="checkAnswer(this, 'correct')">D) 24</li>
+    </ul>
+</div>
+<!-- Question 12 -->
+<div class="quiz-question">
+    <p>12. Instance variables are shared among all objects of a class.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) True</li>
+        <li onclick="checkAnswer(this, 'correct')">B) False</li>
+    </ul>
+
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Example of instance variables
+class Person:
+    def __init__(self, name):
+        self.name = name  # instance variable
+
+p1 = Person("Aman")
+p2 = Person("Rahul")
+
+print(p1.name)  # Output: Aman
+print(p2.name)  # Output: Rahul
+
+# Changing one doesn't affect the other
+p1.name = "Ankit"
+print(p1.name)  # Output: Ankit
+print(p2.name)  # Output: Rahul (unchanged)</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <h4>🔹 What are instance variables?</h4>
+    <ul>
+        <li>Variables defined inside methods (typically <code>__init__</code>)</li>
+        <li>Belong to individual objects (instances) of the class</li>
+        <li>Each object maintains its own separate copy</li>
+    </ul>
+
+    <h4>❌ Why "True" is incorrect:</h4>
+    <ul>
+        <li>If instance variables were shared, modifying one would affect all instances</li>
+        <li>As shown in the example, changing <code>p1.name</code> doesn't affect <code>p2.name</code></li>
+        <li>This demonstrates they are <strong>not</strong> shared between instances</li>
+    </ul>
+
+    <h4>🔍 What <em>is</em> shared between objects?</h4>
+    <ul>
+        <li><strong>Class variables</strong> (defined outside methods)</li>
+        <li>Methods (functions defined in the class)</li>
+        <li>Class-level attributes</li>
+    </ul>
+
+    <h4>💡 Key Differences:</h4>
+    <table>
+        <tr>
+            <th></th>
+            <th>Instance Variables</th>
+            <th>Class Variables</th>
+        </tr>
+        <tr>
+            <td><strong>Scope</strong></td>
+            <td>Per object</td>
+            <td>Shared across all objects</td>
+        </tr>
+        <tr>
+            <td><strong>Declaration</strong></td>
+            <td>Inside methods (usually <code>__init__</code>)</td>
+            <td>Directly in class body</td>
+        </tr>
+        <tr>
+            <td><strong>Modification</strong></td>
+            <td>Affects only one instance</td>
+            <td>Affects all instances</td>
+        </tr>
+    </table>
+</div>
+</div>
+<div class="quiz-question">
+    <p>You are writing a Python program to calculate the average of marks scored in 3 subjects. Printed output should show decimals truncated to 2 places. Find the missing code line.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">
+            A) print("Your average score of 3 subjects is =" float(Sum/3))
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            B) print("Your average score of 3 subjects is = %f" % Avg)
+        </li>
+        <li onclick="checkAnswer(this, 'correct')">
+            C) print("Your average score of 3 subjects is = %0.2f" % Avg)
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            D) print("Your average score of 3 subjects is =" Avg)
+        </li>
+    </ul>
+</div>
+<!-- Question 13 -->
+<div class="quiz-question">
+    <p>13. What will the following code output?</p>
+    <pre>class Car:
+    wheels = 4  # class variable
+    def __init__(self, brand):
+        self.brand = brand  # instance variable
+
+c1 = Car("BMW")
+c2 = Car("Tesla")
+c2.wheels = 6
+
+print(c1.wheels)
+print(c2.wheels)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 4 and 4</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 4 and 6</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 6 and 6</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Class vs Instance Variable Example
+class Car:
+    wheels = 4  # class variable (shared)
+
+    def __init__(self, brand):
+        self.brand = brand  # instance variable
+
+c1 = Car("BMW")
+c2 = Car("Tesla")
+c2.wheels = 6  # creates instance variable for c2
+
+print(c1.wheels)  # Output: 4
+print(c2.wheels)  # Output: 6</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <h4>🔍 Step-by-Step Breakdown:</h4>
+    <ol>
+        <li>Class <code>Car</code> is defined with:
+            <ul>
+                <li>Class variable <code>wheels = 4</code> (shared by all instances)</li>
+                <li>Instance variable <code>brand</code> (unique to each car)</li>
+            </ul>
+        </li>
+        <li>Two instances are created:
+            <ul>
+                <li><code>c1 = Car("BMW")</code></li>
+                <li><code>c2 = Car("Tesla")</code></li>
+            </ul>
+        </li>
+        <li>The critical line: <code>c2.wheels = 6</code>
+            <ul>
+                <li>Creates a new <strong>instance variable</strong> <code>wheels</code> just for <code>c2</code></li>
+                <li>Does <strong>not</strong> modify the class variable</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h4>🧪 Output Analysis:</h4>
+    <table>
+        <tr>
+            <th>Object</th>
+            <th>wheels Value</th>
+            <th>Explanation</th>
+        </tr>
+        <tr>
+            <td><code>c1</code></td>
+            <td>4</td>
+            <td>Uses class variable since no instance variable exists</td>
+        </tr>
+        <tr>
+            <td><code>c2</code></td>
+            <td>6</td>
+            <td>Uses its own instance variable that shadows the class variable</td>
+        </tr>
+    </table>
+
+    <h4>💡 Key Concepts:</h4>
+    <ul>
+        <li><strong>Class variables</strong> are shared across all instances</li>
+        <li><strong>Instance variables</strong> are specific to each object</li>
+        <li>Assignment to an instance creates a new variable that shadows the class variable</li>
+        <li>Original class variable remains unchanged and accessible through other instances</li>
+    </ul>
+
+    <h4>🔧 Checking Variable Status:</h4>
+    <pre><code>print(Car.wheels)  # 4 (class variable unchanged)
+print(c1.__class__.wheels)  # 4 (accessing class variable)
+print(c2.__dict__)  # {'brand': 'Tesla', 'wheels': 6} (instance variables)</code></pre>
+</div>
+</div>
+
+<!-- Question 14 -->
+<div class="quiz-question">
+    <p>14. What is the output of the following code?</p>
+    <pre>x = [1, 2, 3, 4]
+print(len(x))</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 3</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 4</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Error</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) None</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># List length example
+x = [1, 2, 3, 4]
+print(len(x))  # Output: 4</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>The code demonstrates how to determine the number of elements in a list using Python's <strong>len()</strong> function.</p>
+
+    <h4>🔍 List Analysis:</h4>
+    <p>The list <strong>x</strong> contains 4 elements:</p>
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Index</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <h4>✅ Key Points:</h4>
+    <ul>
+        <li><strong>len()</strong> returns the number of items in an iterable</li>
+        <li>For lists, it counts all elements regardless of their type</li>
+        <li>Indexing starts at 0, but length counts start at 1</li>
+        <li>Works with other sequences: strings, tuples, dictionaries</li>
+    </ul>
+
+    <h4>💡 Related Examples:</h4>
+    <pre><code>print(len("hello"))  # 5 (string length)
+print(len((1,2,3)))  # 3 (tuple length)
+print(len({"a":1, "b":2}))  # 2 (dictionary key count)</code></pre>
+</div>
+</div>
+<div class="quiz-question">
+    <p>An object cannot contain any references to other objects.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) True</li>
+        <li onclick="checkAnswer(this, 'correct')">B) False</li>
+    </ul>
+</div>
+<!-- Question 15 -->
+<div class="quiz-question">
+    <p>15. What will be the result of this code?</p>
+    <pre>name = "Python"
+print(len(name[3]))</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 6</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 1</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 3</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># String indexing and length example
+name = "Python"
+print(len(name[3]))  # Output: 1</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This code demonstrates string indexing and the <code>len()</code> function in Python.</p>
+
+    <h4>🔍 Step-by-Step Breakdown:</h4>
+    <ol>
+        <li><strong>String Assignment:</strong>
+            <pre><strong>name = "Python"</strong></pre>
+            <p>A 6-character string with these indices:</p>
+            <table>
+                <tr>
+                    <th>Character</th><td>P</td><td>y</td><td>t</td><td>h</td><td>o</td><td>n</td>
+                </tr>
+                <tr>
+                    <th>Index</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                </tr>
+            </table>
+        </li>
+        <li><strong>Indexing Operation:</strong>
+            <pre><strong>name[3]</strong></pre>
+            <p>Accesses the character at index 3: <strong>"h"</strong></p>
+        </li>
+        <li><strong>Length Calculation:</strong>
+            <pre><strong>len("h")</strong></pre>
+            <p>Returns the length of this single-character string: <strong>1</strong></p>
+        </li>
+    </ol>
+
+    <h4>✅ Key Points:</h4>
+    <ul>
+        <li>String indices start at 0 in Python</li>
+        <li><strong>len()</strong> returns the length of any sequence</li>
+        <li>When applied to a single character, it returns 1</li>
+        <li>This behavior is consistent for all single-character strings</li>
+    </ul>
+
+    <h4>💡 Related Example:</h4>
+    <pre><code>print(len("A"))    # Output: 1
+print(len(" "))   # Output: 1 (space counts as a character)
+print(len(""))    # Output: 0 (empty string)</code></pre>
+</div>
+</div>
+
+<!-- Question 16 -->
+<div class="quiz-question">
+    <p>16. What will the following code output?</p>
+    <pre>i = 1
+while i <= 3:
+    print(i, end="*")
+    i += 1</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 1 2 3*</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 1*2*3*</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 1*2*3</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 1 2 3</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># While loop with custom end parameter
+i = 1
+while i <= 3:
+    print(i, end="*")
+    i += 1</code></pre>
+
+    <h4>✅ Output:</h4>
+    <pre>1*2*3*</pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This code demonstrates a while loop with a custom separator using the <strong>end</strong> parameter in Python's <strong>print()</strong> function.</p>
+
+    <h4>🔍 Step-by-Step Execution:</h4>
+    <table>
+        <tr>
+            <th>Iteration</th>
+            <th>i value</th>
+            <th>Output</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1*</td>
+            <td>Prints 1 followed by * (no newline)</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>2*</td>
+            <td>Continues on same line</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>3*</td>
+            <td>Final iteration</td>
+        </tr>
+    </table>
+
+    <h4>💡 Key Features:</h4>
+    <ul>
+        <li><strong>end="*"</strong> replaces the default newline with an asterisk</li>
+        <li>All output appears on one continuous line</li>
+        <li>The loop runs exactly 3 times (for i=1, 2, 3)</li>
+        <li>No trailing space after the final asterisk</li>
+    </ul>
+
+    <h4>🔄 Alternative Versions:</h4>
+    <pre><code># With space separator
+print(i, end=" ")  # Output: 1 2 3 
+
+# With comma separator
+print(i, end=",")  # Output: 1,2,3,</code></pre>
+</div>
+</div>
+<div class="quiz-question">
+    <p>What is the output of the following print statement?</p>
+    <pre>
+S1 = 'Indian Army is our Pride'
+print(S1[:19])
+    </pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) ""</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) r</li>
+        <li onclick="checkAnswer(this, 'correct')">C) Indian Army is our P</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Indian Army is our</li>
+    </ul>
+</div>
+<!-- Question 17 -->
+<div class="quiz-question">
+    <p>17. Which snippet should replace the comment to produce this output?</p>
+    <pre>letters = ["A", "B", "C", "D"]
+for ch in letters:
+    # insert your code here
+
+Output:
+A-B-C-D-</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) print(ch, end="-")</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) print(ch, "-")</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) print(ch + "-")</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) print(ch, sep="-")</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Printing list elements with separator
+letters = ["A", "B", "C", "D"]
+for ch in letters:
+    print(ch, end="-")  # Correct option</code></pre>
+
+    <h4>✅ Output:</h4>
+    <pre>A-B-C-D-</pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This code demonstrates how to print list elements with a custom separator using the <strong>end</strong> parameter in Python's <strong>print()</strong> function.</p>
+
+    <h4>🔍 Why Option A is Correct:</h4>
+    <ul>
+        <li><strong>end="-"</strong> replaces the default newline with a dash</li>
+        <li>Each character is printed followed by <strong>-</strong></li>
+        <li>All output appears on one line with dashes between letters</li>
+        <li>Exactly matches the desired output format</li>
+    </ul>
+
+    <h4>❌ Why Other Options Fail:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Code</th>
+            <th>Output</th>
+            <th>Problem</th>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td><strong>print(ch, "-")</strong></td>
+            <td>A -B -C -D</td>
+            <td>Adds unwanted spaces</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td><strong>print(ch + "-")</strong></td>
+            <td>A-B-C-D-</td>
+            <td>Works but less flexible</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td><strong>print(ch, sep="-")</strong></td>
+            <td>ABCD</td>
+            <td><strong>sep</strong> doesn't work with single items</td>
+        </tr>
+    </table>
+
+    <h4>💡 Key Differences:</h4>
+    <ul>
+        <li><strong><strong>end</strong></strong>: Controls what comes after the printed item</li>
+        <li><strong><strong>sep</strong></strong>: Controls spacing between multiple items</li>
+        <li><strong>Concatenation (+)</strong>: Works but requires string conversion for non-strings</li>
+    </ul>
+
+    <h4>🔧 Best Practice:</h4>
+    <pre><code># For joining strings, str.join() is often better:
+print("-".join(letters) + "-")  # Also gives A-B-C-D-</code></pre>
+</div>
+</div>
+
+<!-- Question 18 -->
+<div class="quiz-question">
+    <p>18. You want to print the result of a division with 2 decimal places using f-string formatting. What line of code correctly prints:</p>
+    <pre>The result is = 3.33
+If result = 10/3</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) print("The result is =", result)</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) print("The result is = %.2f" % result)</li>
+        <li onclick="checkAnswer(this, 'correct')">C) print(f"The result is = {result:.2f}")</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) print("The result is = {:2f}".format(result))</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Floating-point number formatting examples
+result = 10 / 3  # 3.3333333333333335
+
+# Correct f-string formatting
+print(f"The result is = {result:.2f}")  # Output: The result is = 3.33</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates how to properly format floating-point numbers to 2 decimal places in Python.</p>
+
+    <h4>🔍 Why Option C is Correct:</h4>
+    <ul>
+        <li>Uses modern f-string syntax (Python 3.6+)</li>
+        <li><strong>{result:.2f}</strong> means:
+            <ul>
+                <li><strong>result</strong>: The variable to format</li>
+                <li><strong>.2</strong>: Show 2 decimal places</li>
+                <li><strong>f</strong>: Format as floating-point number</li>
+            </ul>
+        </li>
+        <li>Clean, readable, and maintainable</li>
+        <li>Exactly matches the desired output format</li>
+    </ul>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Code</th>
+            <th>Output</th>
+            <th>Problem</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td><strong>print("The result is =", result)</strong></td>
+            <td>The result is = 3.3333333333333335</td>
+            <td>No decimal place control</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td><strong>print("The result is = %.2f" % result)</strong></td>
+            <td>The result is = 3.33</td>
+            <td>Works but uses older %-formatting</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td><strong>print("The result is = {:2f}".format(result))</strong></td>
+            <td>The result is = 3.333333</td>
+            <td>Wrong format specifier</td>
+        </tr>
+    </table>
+
+    <h4>💡 Formatting Options Comparison:</h4>
+    <pre><code># 1. f-strings (modern, preferred)
+print(f"Result: {result:.2f}")
+
+# 2. str.format() (Python 2.7+, 3.0+)
+print("Result: {:.2f}".format(result))
+
+# 3. %-formatting (older style)
+print("Result: %.2f" % result)</code></pre>
+
+    <h4>📝 Key Takeaways:</h4>
+    <ul>
+        <li>F-strings are the most readable and recommended approach</li>
+        <li><strong>.2f</strong> is the correct format for 2 decimal places</li>
+        <li>Be careful with format specifiers - small differences matter</li>
+        <li>All numeric formatting methods can achieve similar results</li>
+    </ul>
+</div>
+</div>
+<div class="quiz-question">
+    <p>What is the output of the following Python code?</p>
+    <pre>
+Sweet = ["Jaleebi", "darwadpeda", "champakali"]
+print(Sweet * 3)
+    </pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) SweetSweetSweet</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) ['Jaleebi', 'darwadpeda', 'champakali']</li>
+        <li onclick="checkAnswer(this, 'correct')">C) ['Jaleebi', 'darwadpeda', 'champakali', 'Jaleebi', 'darwadpeda', 'champakali', 'Jaleebi', 'darwadpeda', 'champakali']</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) [['Jaleebi', 'darwadpeda', 'champakali'], ['Jaleebi', 'darwadpeda', 'champakali'], ['Jaleebi', 'darwadpeda', 'champakali']]</li>
+    </ul>
+</div>
+<!-- Question 19 -->
+<div class="quiz-question">
+    <p>19. You want to print the area of a rectangle, formatted to 2 decimal places, using the format() method.</p>
+    <pre>Given:
+length = 5.678
+width = 3.456
+area = length * width
+
+Which line correctly prints:
+Area = 19.64</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) print("Area = ", area)</li>
+        <li onclick="checkAnswer(this, 'correct')">B) print("Area = {:.2f}".format(area))</li>
+        <li onclick="checkAnswer(this, 'correct')">C) print("Area = %.2f" % area)</li>
+        <li onclick="checkAnswer(this, 'correct')">D) Both B and C</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Floating-point number formatting comparison
+length = 5.678
+width = 3.456
+area = length * width  # ≈ 19.637568
+
+# Option B (str.format)
+print("Area = {:.2f}".format(area))  # Output: Area = 19.64
+
+# Option C (% formatting)
+print("Area = %.2f" % area)  # Output: Area = 19.64
+
+# Option A (unformatted)
+print("Area = ", area)  # Output: Area = 19.637568</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates two correct ways to format floating-point numbers to 2 decimal places in Python.</p>
+
+    <h4>🔍 Why Both B and C are Correct:</h4>
+    <div>
+        <div>
+            <h5>Option B: str.format()</h5>
+            <pre><strong>"Area = {:.2f}".format(area)</strong></pre>
+            <ul>
+                <li>Modern string formatting method (Python 2.6+)</li>
+                <li><strong>:.2f</strong> specifies 2 decimal places</li>
+                <li>More flexible for complex formatting</li>
+            </ul>
+        </div>
+        <div>
+            <h5>Option C: % formatting</h5>
+            <pre><strong>"Area = %.2f" % area</strong></pre>
+            <ul>
+                <li>Older printf-style formatting</li>
+                <li><strong>%.2f</strong> also specifies 2 decimal places</li>
+                <li>Still widely used and supported</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>❌ Why Option A is Incorrect:</h4>
+    <ul>
+        <li>Prints the full unformatted float value</li>
+        <li>No control over decimal places</li>
+        <li>Output doesn't match the required format</li>
+    </ul>
+
+    <h4>💡 Modern Best Practice:</h4>
+    <pre><code># F-strings (Python 3.6+ - most recommended)
+print(f"Area = {area:.2f}")  # Output: Area = 19.64</code></pre>
+
+    <h4>📝 Key Takeaways:</h4>
+    <ul>
+        <li>Both <strong>.format()</strong> and <strong>%</strong> formatting can achieve the same result</li>
+        <li>F-strings are now the preferred method (Python 3.6+)</li>
+        <li>The <strong>.2f</strong> format specifier is consistent across methods</li>
+        <li>Always specify the number of decimal places for financial/scientific output</li>
+    </ul>
+</div>
+    
+</div>
+
+<!-- Question 20 -->
+<div class="quiz-question">
+    <p>20. What will be the output of the following code?</p>
+    <pre>x = "Python"
+def greet():
+    return x + " is awesome!"
+print(greet())</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) Python is awesome!</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) is awesome!</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) x is awesome!</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error – x is not defined</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Global variable example
+x = "Python"
+
+def greet():
+    return x + " is awesome!"
+
+print(greet())  # Output: Python is awesome!</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This code demonstrates how global variables work in Python functions.</p>
+
+    <h4>🔍 Step-by-Step Analysis:</h4>
+    <ol>
+        <li><strong>Global Variable Definition:</strong>
+            <pre><code>x = "Python"  # Global variable</code></pre>
+        </li>
+        <li><strong>Function Definition:</strong>
+            <pre><code>def greet():
+    return x + " is awesome!"  # Accesses global x</code></pre>
+        </li>
+        <li><strong>Function Call:</strong>
+            <pre><code>print(greet())  # Calls the function and prints result</code></pre>
+        </li>
+    </ol>
+
+    <h4>✅ Output:</h4>
+    <pre>Python is awesome!</pre>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Explanation</th>
+        </tr>
+        <tr>
+            <td>B) "is awesome!"</td>
+            <td>Missing the value of x (would need to remove x from the function)</td>
+        </tr>
+        <tr>
+            <td>C) "x is awesome!"</td>
+            <td>Would print the letter 'x' literally (not the variable's value)</td>
+        </tr>
+        <tr>
+            <td>D) No error</td>
+            <td>While technically correct that there's no error, it doesn't answer the output question</td>
+        </tr>
+    </table>
+
+    <h4>💡 Key Concepts:</h4>
+    <ul>
+        <li>Global variables are accessible inside functions</li>
+        <li>String concatenation with + combines values</li>
+        <li>Functions can access variables from their containing scope</li>
+        <li>print() displays the function's return value</li>
+    </ul>
+</div>
+</div>
+<div class="quiz-question">
+    <p>The <code>class</code> keyword marks the beginning of the class definition.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) False</li>
+        <li onclick="checkAnswer(this, 'correct')">B) True</li>
+    </ul>
+</div>
+<!-- Question 21 -->
+<div class="quiz-question">
+    <p>21. What will be printed by the following code?</p>
+    <pre>msg = "Hello"
+def change_msg():
+    msg = "Hi"
+    return msg
+print(change_msg())
+print(msg)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Hi and Hi</li>
+        <li onclick="checkAnswer(this, 'correct')">B) Hi and Hello</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Hello and Hi</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error – msg is used before assignment</li>
+    </ul>
+
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Variable scope example
+msg = "Hello"  # Global variable
+
+def change_msg():
+    msg = "Hi"  # Local variable
+    return msg
+
+print(change_msg())  # Output: Hi
+print(msg)           # Output: Hello</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This code demonstrates the difference between global and local variables in Python.</p>
+
+    <h4>🔍 Step-by-Step Analysis:</h4>
+    <ol>
+        <li><strong>Global Variable Setup:</strong>
+            <pre><code>msg = "Hello"  # Global variable</code></pre>
+        </li>
+        <li><strong>Function Definition:</strong>
+            <pre><code>def change_msg():
+    msg = "Hi"  # This creates a new local variable
+    return msg</code></pre>
+            <p>The local <strong>msg</strong> shadows but doesn't modify the global one</p>
+        </li>
+        <li><strong>Function Call:</strong>
+            <pre><code>print(change_msg())  # Prints the local "Hi"</code></pre>
+        </li>
+        <li><strong>Global Variable Access:</strong>
+            <pre><code>print(msg)  # Still accesses the original global "Hello"</code></pre>
+        </li>
+    </ol>
+
+    <h4>✅ Output:</h4>
+    <pre>Hi
+Hello</pre>
+
+    <h4>💡 Key Concepts:</h4>
+    <ul>
+        <li><strong>Global variables</strong> are accessible throughout the module</li>
+        <li><strong>Local variables</strong> exist only within their function</li>
+        <li>Assignment inside a function creates a local variable by default</li>
+        <li>To modify a global variable, you need the <strong>global</strong> keyword</li>
+    </ul>
+
+    <h4>🔧 Modifying Global Variables:</h4>
+    <pre><code>msg = "Hello"
+
+def change_global_msg():
+    global msg  # Explicit declaration
+    msg = "Hi"
+    return msg
+
+print(change_global_msg())  # Hi
+print(msg)                 # Hi (global changed)</code></pre>
+</div>
+</div>
+
+<!-- Question 22 -->
+<div class="quiz-question">
+    <p>22. In Python, which of the following data types can hold references to other objects?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) list</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) dictionary</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) class object</li>
+        <li onclick="checkAnswer(this, 'correct')">D) All of the above</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Examples of objects holding references in Python
+
+# 1. List example
+lst = [1, "hello", [2, 3], print]  # Contains int, str, list, and function
+
+# 2. Dictionary example
+d = {"name": "Aman", "info": [1, 2, 3], "func": len}  # Contains str, list, and function
+
+# 3. Class object example
+class Student:
+    def __init__(self, name, subjects):
+        self.name = name          # string
+        self.subjects = subjects  # list
+        self.info = {"grade": "A"}  # dictionary
+
+s = Student("Aman", ["Math", "Science"])  # Contains str, list, and dict</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>In Python, many data types can hold references to other objects, demonstrating that "All of the above" is correct.</p>
+
+    <h4>🔍 Detailed Analysis:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Type</th>
+            <th>Can Hold References To</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>list</td>
+            <td>Any Python objects</td>
+            <td><strong>[1, "a", [2,3], print]</strong></td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>dict</td>
+            <td>Any Python objects (as values)</td>
+            <td><strong>{"x": 1, "y": [2,3]}</strong></td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>class object</td>
+            <td>Any Python objects (as attributes)</td>
+            <td><strong>obj.attr = "value"</strong></td>
+        </tr>
+    </table>
+
+    <h4>✅ Key Points:</h4>
+    <ul>
+        <li>Python uses <strong>object references</strong> extensively</li>
+        <li>Containers (lists, dicts) store references to other objects</li>
+        <li>Class attributes are just references to objects</li>
+        <li>This is why Python is called a <strong>reference-based language</strong></li>
+    </ul>
+
+    <h4>💡 Memory Implications:</h4>
+    <pre><code>a = [1, 2, 3]
+b = a  # Both variables reference the same list object
+b[0] = 99
+print(a)  # [99, 2, 3] - changes affect both references</code></pre>
+</div>
+</div>
+<div class="quiz-question">
+    <p>A constructor is used to instantiate an object.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) False</li>
+        <li onclick="checkAnswer(this, 'correct')">B) True</li>
+    </ul>
+</div>
+<!-- Question 23 -->
+<div class="quiz-question">
+    <p>23. What will be the output of the following code?</p>
+    <pre>x = [1, 2, 3]
+y = x
+y.append(4)
+print(x)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) [1, 2, 3]</li>
+        <li onclick="checkAnswer(this, 'correct')">B) [1, 2, 3, 4]</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) [4]</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># List reference example
+x = [1, 2, 3]  # Original list
+y = x           # y refers to the same list
+y.append(4)     # Modify through y
+print(x)        # Output: [1, 2, 3, 4]</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates how Python handles object references with mutable types like lists.</p>
+
+    <h4>🔍 Step-by-Step Breakdown:</h4>
+    <ol>
+        <li><strong>List Creation:</strong>
+            <pre><strong>x = [1, 2, 3]</strong></pre>
+            <p>Memory allocates space for the list object</p>
+        </li>
+        <li><strong>Reference Assignment:</strong>
+            <pre><code>y = x</code></pre>
+            <p>Both x and y now point to the same list object in memory</p>
+        </li>
+        <li><strong>List Modification:</strong>
+            <pre><strong>y.append(4)</strong></pre>
+            <p>The shared list object is modified in-place</p>
+        </li>
+        <li><strong>Result:</strong>
+            <pre><strong>print(x)  # Shows the modified list</strong></pre>
+        </li>
+    </ol>
+
+    <h4>✅ Output:</h4>
+    <pre>[1, 2, 3, 4]</pre>
+
+    <h4>💡 Key Concepts:</h4>
+    <ul>
+        <li>Lists are <strong>mutable</strong> objects in Python</li>
+        <li>Assignment (<strong>y = x</strong>) creates a new reference, not a copy</li>
+        <li>Changes through any reference affect the single shared object</li>
+        <li>This behavior applies to all mutable types (lists, dicts, sets)</li>
+    </ul>
+
+    <h4>🔧 Creating Independent Copies:</h4>
+    <pre><code># To avoid shared references:
+x = [1, 2, 3]
+y = x.copy()    # or y = list(x) or y = x[:]
+y.append(4)
+print(x)        # [1, 2, 3] (unchanged)
+print(y)        # [1, 2, 3, 4]</code></pre>
+</div>
+</div>
+
+<!-- Question 24 -->
+<div class="quiz-question">
+    <p>24. What will be the output of the following code?</p>
+    <pre>msg = "Python Programming"
+print(msg[7:18])</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Programming</li>
+        <li onclick="checkAnswer(this, 'correct')">B) rogramming</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Python Progra</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) ython Programm</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># String slicing example
+msg = "Python Programming"
+print(msg[7:18])  # Output: Programming</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates how string slicing works in Python.</p>
+
+    <h4>🔍 Step-by-Step Breakdown:</h4>
+    <table>
+        <tr>
+            <th>Index</th>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+        </tr>
+        <tr>
+            <th>Character</th>
+            <td>P</td><td>y</td><td>t</td><td>h</td><td>o</td><td>n</td><td> </td><td>P</td><td>r</td><td>o</td><td>g</td><td>r</td><td>a</td><td>m</td><td>m</td><td>i</td><td>n</td><td>g</td>
+        </tr>
+    </table>
+
+    <h4>✅ Slicing Details:</h4>
+    <ul>
+        <li><strong>msg[7:18]</strong> extracts from index 7 (inclusive) to 18 (exclusive)</li>
+        <li>Index 7 is the 'P' in "Programming"</li>
+        <li>Python automatically stops at the last character (index 17) when the end is beyond the string length</li>
+        <li>The slice includes characters at indices 7 through 17</li>
+    </ul>
+
+    <h4>💡 Key Points:</h4>
+    <ul>
+        <li>String indices start at 0</li>
+        <li>Slicing is upper-bound exclusive (doesn't include the end index)</li>
+        <li>Python handles out-of-range slice ends gracefully</li>
+        <li>The space character at index 6 is not included in this slice</li>
+    </ul>
+
+    <h4>🔧 Related Examples:</h4>
+    <pre><code>print(msg[7:])    # Programming (from 7 to end)
+print(msg[:6])    # Python (from start to 5)
+print(msg[7:12])  # Progr (from 7 to 11)</code></pre>
+</div>
+</div>
+<div class="quiz-question">
+    <p>A class may define an object.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) False</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) True</li>
+    </ul>
+</div>
+<!-- Question 25 -->
+<div class="quiz-question">
+    <p>25. What will be printed by this code?</p>
+    <pre>text = "Data Science with Python"
+print(text[:12])</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Data Science </li>
+        <li onclick="checkAnswer(this, 'correct')">B) Data Science</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Data Science w</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Data Scienc</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># String slicing example
+text = "Data Science with Python"
+print(text[:12])  # Output: Data Science</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates string slicing with an upper bound in Python.</p>
+
+    <h4>🔍 Character-by-Character Analysis:</h4>
+    <table>
+        <tr>
+            <th>Index</th>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+        </tr>
+        <tr>
+            <th>Character</th>
+            <td>D</td><td>a</td><td>t</td><td>a</td><td> </td><td>S</td><td>c</td><td>i</td><td>e</td><td>n</td><td>c</td><td>e</td><td> </td>
+        </tr>
+    </table>
+
+    <h4>✅ Slicing Details:</h4>
+    <ul>
+        <li><strong>text[:12]</strong> means "from start to index 11" (12 is excluded)</li>
+        <li>Includes characters at indices 0 through 11: 'D' through 'e'</li>
+        <li>The space at index 12 is <strong>not</strong> included</li>
+        <li>Result is exactly "Data Science" (11 characters)</li>
+    </ul>
+
+    <h4>❗ Correction Notice:</h4>
+    <p>The original option C ("Data Science w") was incorrect because:</p>
+    <ul>
+        <li>It includes the 'w' which would require <strong>text[:13]</strong></li>
+        <li>The correct output is actually "Data Science" (option A)</li>
+    </ul>
+
+    <h4>💡 Key Slicing Rules:</h4>
+    <ul>
+        <li>Slice ranges are <strong>upper-bound exclusive</strong></li>
+        <li>Omitting start index defaults to 0</li>
+        <li>Spaces count as characters in the index</li>
+        <li>Python won't error if slice exceeds string length</li>
+    </ul>
+
+    <h4>🔧 Related Examples:</h4>
+    <pre><code>print(text[:13])  # Data Science w
+print(text[:4])   # Data
+print(text[5:12]) # Science</code></pre>
+</div>
+</div>
+
+<!-- Question 26 -->
+<div class="quiz-question">
+    <p>26. What is the output of the following code?</p>
+    <pre>fruits = ["apple", "banana"]
+print(fruits * 2)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) ["apple", "banana", "apple", "banana"]</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) ["applebanana", "applebanana"]</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) ["apple", "banana"]</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) [['apple', 'banana'], ['apple', 'banana']]</li>
+    </ul>
+
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># List multiplication example
+fruits = ["apple", "banana"]
+print(fruits * 2)  # Output: ['apple', 'banana', 'apple', 'banana']</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates how the multiplication operator works with lists in Python.</p>
+
+    <h4>🔍 How List Multiplication Works:</h4>
+    <ul>
+        <li>The <strong>*</strong> operator with lists performs repetition, not mathematical multiplication</li>
+        <li><strong>list * n</strong> creates a new list by concatenating the original list <strong>n</strong> times</li>
+        <li>The elements themselves are not modified - they're just repeated</li>
+    </ul>
+
+    <h4>✅ Step-by-Step Transformation:</h4>
+    <ol>
+        <li>Original list: <strong>["apple", "banana"]</strong></li>
+        <li>After <strong>* 2</strong>: <strong>["apple", "banana"] + ["apple", "banana"]</strong></li>
+        <li>Result: <strong>["apple", "banana", "apple", "banana"]</strong></li>
+    </ol>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>What It Would Imply</th>
+            <th>Why It's Wrong</th>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>["applebanana", "applebanana"]</td>
+            <td>String concatenation doesn't happen with list multiplication</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>["apple", "banana"]</td>
+            <td>This would be the original list without repetition</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>[["apple", "banana"], ["apple", "banana"]]</td>
+            <td>This would create nested lists, not a flat repeated list</td>
+        </tr>
+    </table>
+
+    <h4>💡 Important Notes:</h4>
+    <ul>
+        <li>The multiplication creates a <strong>shallow copy</strong> - repeated elements reference the same objects</li>
+        <li>Works with any positive integer (0 creates empty list, 1 creates copy)</li>
+        <li>Different from NumPy array multiplication which does element-wise operations</li>
+    </ul>
+
+    <h4>🔧 Related Examples:</h4>
+    <pre><code>print([0] * 5)      # [0, 0, 0, 0, 0]
+print([1, 2] * 3)   # [1, 2, 1, 2, 1, 2]
+print([] * 4)       # [] (empty list)</code></pre>
+</div>
+</div>
+
+<!-- Question 27 -->
+<div class="quiz-question">
+    <p>27. What will the following code output?</p>
+    <pre>nums = [1, 2]
+nums = nums * 3
+print(len(nums))</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 3</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 6</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 2</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error</li>
+    </ul>
+
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># List multiplication and length example
+nums = [1, 2]
+nums = nums * 3
+print(len(nums))  # Output: 6</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates how list multiplication affects the length of a list in Python.</p>
+
+    <h4>🔍 Step-by-Step Execution:</h4>
+    <ol>
+        <li><strong>Initial List:</strong>
+            <pre><code>nums = [1, 2]  # Length = 2</code></pre>
+        </li>
+        <li><strong>List Multiplication:</strong>
+            <pre><code>nums = nums * 3  # Repeats the list 3 times</code></pre>
+            <p>This performs: <code>[1, 2] + [1, 2] + [1, 2]</code></p>
+        </li>
+        <li><strong>Resulting List:</strong>
+            <pre><code>[1, 2, 1, 2, 1, 2]  # Length = 6</code></pre>
+        </li>
+        <li><strong>Length Calculation:</strong>
+            <pre><code>print(len(nums))  # Counts all 6 elements</code></pre>
+        </li>
+    </ol>
+
+    <h4>✅ Output:</h4>
+    <pre>6</pre>
+
+    <h4>💡 Key Points:</h4>
+    <ul>
+        <li>List multiplication (<strong>*</strong>) concatenates copies of the list</li>
+        <li>The length of the resulting list is <strong>original_length * multiplier</strong></li>
+        <li>Elements are repeated in order</li>
+        <li>Original list remains unchanged until reassignment</li>
+    </ul>
+
+    <h4>🔧 Memory Considerations:</h4>
+    <pre><code># The multiplication creates a new list
+original = [1, 2]
+new = original * 3
+print(original)  # [1, 2] (unchanged)
+print(new)      # [1, 2, 1, 2, 1, 2]</code></pre>
+
+    <h4>📝 Formula:</h4>
+    <p>Final length = Original length × Multiplier</p>
+    <p>In this case: 2 × 3 = 6</p>
+</div>
+</div>
+
+<div class="quiz-question">
+    <p>For the given code, finish the missing line:</p>
+    <pre>
+start = input("How old were you on your start date? ")
+end = input("How old are you today?")
+# Missing line here
+    </pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) print("congratulation on" + str(end - int(start)) + "years of service!")</li>
+        <li onclick="checkAnswer(this, 'correct')">B) print("congratulation on" + str(int(end) - int(start)) + "years of service!")</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) print("congratulation on" + int(end - start) + "years of service!")</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) print("congratulation on " + (int(end) - int(start)) + "years of service!")</li>
+    </ul>
+</div>
+<!-- Question 28 -->
+<div class="quiz-question">
+    <p>28. Which of the following correctly defines a class in Python?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) def Student:</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) define Student():</li>
+        <li onclick="checkAnswer(this, 'correct')">C) class Student:</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Student class():</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Correct class definition syntax
+class Student:
+    pass  # Class body goes here</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates the proper way to define a class in Python.</p>
+
+    <h4>🔍 Class Definition Components:</h4>
+    <ul>
+        <li><strong>class</strong> - The keyword that starts a class definition</li>
+        <li><strong>Student</strong> - The class name (PascalCase by convention)</li>
+        <li><strong>:</strong> - Colon that ends the declaration and starts the class body</li>
+        <li><strong>pass</strong> - Placeholder for the class body (can be replaced with methods and attributes)</li>
+    </ul>
+
+    <h4>✅ Valid Class Example:</h4>
+    <pre><code>class Student:
+    def __init__(self, name):
+        self.name = name
+    
+    def greet(self):
+        print(f"Hello, my name is {self.name}")</code></pre>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Issue</th>
+        </tr>
+        <tr>
+            <td>A) def Student:</td>
+            <td><strong>def</strong> is for functions, not classes</td>
+        </tr>
+        <tr>
+            <td>B) define Student():</td>
+            <td><strong>define</strong> is not a Python keyword</td>
+        </tr>
+        <tr>
+            <td>D) Student class():</td>
+            <td>Invalid syntax order in Python</td>
+        </tr>
+    </table>
+
+    <h4>💡 Class Definition Rules:</h4>
+    <ul>
+        <li>Class names should use <strong>PascalCase</strong> (capitalize each word)</li>
+        <li>The class body must be indented</li>
+        <li>Class definitions can contain methods and attributes</li>
+        <li><strong>__init__()</strong> is the special method for initialization</li>
+    </ul>
+
+    <h4>🔧 Class Instantiation Example:</h4>
+    <pre><code># Creating an instance of the Student class
+student1 = Student("Alice")
+student1.greet()  # Output: Hello, my name is Alice</code></pre>
+</div>
+</div>
+
+<!-- Question 29 -->
+<div class="quiz-question">
+    <p>29. In Python, which method is automatically called when a new object of a class is created?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) __init__()</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) __start__()</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) __create__()</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) __main__()</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># __init__ method example
+class Student:
+    def __init__(self, name):
+        self.name = name  # Initialize instance attribute
+
+s = Student("Aman")  # __init__ is automatically called
+print(s.name)  # Output: Aman</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>The <strong>__init__()</strong> method is Python's constructor that initializes new objects.</p>
+
+    <h4>🔍 Key Characteristics:</h4>
+    <ul>
+        <li>Automatically called when creating new instances</li>
+        <li>First parameter is always <strong>self</strong> (reference to the new instance)</li>
+        <li>Typically used to set initial attribute values</li>
+        <li>Not required in every class, but extremely common</li>
+    </ul>
+
+    <h4>✅ Proper __init__ Usage:</h4>
+    <pre><code>class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+        self.mileage = 0  # Default value
+        
+my_car = Car("Toyota", "Camry")</code></pre>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Issue</th>
+        </tr>
+        <tr>
+            <td>__start__()</td>
+            <td>Not part of Python's method naming conventions</td>
+        </tr>
+        <tr>
+            <td>__create__()</td>
+            <td>No such special method exists</td>
+        </tr>
+        <tr>
+            <td>__main__()</td>
+            <td>Used for script execution, not object initialization</td>
+        </tr>
+    </table>
+
+    <h4>💡 Important Notes:</h4>
+    <ul>
+        <li><strong>__init__</strong> is <strong>not</strong> the actual constructor (that's <costrongde>__new__</costrongde>)</li>
+        <li>It's an initializer that receives the constructed instance</li>
+        <li>Must not return any value (other than None)</li>
+        <li>Called after the instance is created but before it's returned</li>
+    </ul>
+
+    <h4>🔧 Related Special Methods:</h4>
+    <pre><code>__new__()  # Actual constructor
+__del__()  # Destructor
+__str__()  # String representation</code></pre>
+</div>
+</div>
+<div class="quiz-question">
+    <p>What is the output of the <code>print(type(...))</code> statements in the following Python code?</p>
+    <pre>
+Name = "Boss Baby"
+Age = 2.4
+Male = True
+Female = False
+weight = 15
+UID = 'EBC1233'
+
+print(type(Name))
+print(type(Age))
+print(type(Male))
+print(type(Female))
+print(type(weight))
+print(type(UID))
+    </pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">
+            A) &lt;class 'str'&gt;<br>
+            &lt;class 'float'&gt;<br>
+            &lt;class 'bool'&gt;<br>
+            &lt;class 'bool'&gt;<br>
+            &lt;class 'int'&gt;<br>
+            &lt;class 'str'&gt;
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            B) &lt;class 'str'&gt;<br>
+            &lt;class 'int'&gt;<br>
+            &lt;class 'bool'&gt;<br>
+            &lt;class 'int'&gt;<br>
+            &lt;class 'float'&gt;<br>
+            &lt;class 'str'&gt;
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            C) &lt;class 'int'&gt;<br>
+            &lt;class 'str'&gt;<br>
+            &lt;class 'bool'&gt;<br>
+            &lt;class 'bool'&gt;<br>
+            &lt;class 'str'&gt;<br>
+            &lt;class 'float'&gt;
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            D) &lt;class 'str'&gt;<br>
+            &lt;class 'float'&gt;<br>
+            &lt;class 'int'&gt;<br>
+            &lt;class 'int'&gt;<br>
+            &lt;class 'int'&gt;<br>
+            &lt;class 'str'&gt;
+        </li>
+    </ul>
+</div>
+<!-- Question 30 -->
+<div class="quiz-question">
+    <p>30. What is the purpose of the __init__() method in a Python class?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) To destroy an object</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) To define static variables</li>
+        <li onclick="checkAnswer(this, 'correct')">C) To initialize an object's state when it's created</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) To call another function automatically</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># __init__ method example
+class Student:
+    def __init__(self, name, age):
+        self.name = name  # Initialize instance attributes
+        self.age = age
+
+s = Student("Aman", 21)  # __init__ is called automatically
+print(s.name)  # Output: Aman
+print(s.age)   # Output: 21</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>The <strong>__init__()</strong> method is Python's initializer that sets up new objects with their starting values.</p>
+
+    <h4>✅ Primary Purpose:</h4>
+    <ul>
+        <li>Initialize instance attributes (object state)</li>
+        <li>Set default values for the object</li>
+        <li>Prepare the object for use</li>
+        <li>Called automatically when creating new instances</li>
+    </ul>
+
+    <h4>🔍 Key Characteristics:</h4>
+    <ul>
+        <li>First parameter must be <strong>self</strong> (instance reference)</li>
+        <li>Can accept additional parameters for initialization</li>
+        <li>Typically contains attribute assignments</li>
+        <li>Should not return anything (except None)</li>
+    </ul>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Correct Alternative</th>
+            <th>Explanation</th>
+        </tr>
+        <tr>
+            <td>A) Destroy object</td>
+            <td><strong>__del__()</strong></td>
+            <td>Destructor method, not initializer</td>
+        </tr>
+        <tr>
+            <td>B) Static variables</td>
+            <td>Class-level definitions</td>
+            <td>Static vars are defined outside methods</td>
+        </tr>
+        <tr>
+            <td>D) Call functions</td>
+            <td>Regular methods</td>
+            <td>While possible, not the main purpose</td>
+        </tr>
+    </table>
+
+    <h4>💡 Important Distinctions:</h4>
+    <ul>
+        <li><strong>__init__</strong> initializes objects, <strong>__new__</strong> creates them</li>
+        <li>Different from constructors in some other languages</li>
+        <li>Not required in every class, but used in most</li>
+    </ul>
+
+    <h4>🔧 Common Initialization Patterns:</h4>
+    <pre><code># With default values
+def __init__(self, name="Anonymous"):
+    self.name = name
+
+# Calling other initialization methods
+def __init__(self):
+    self.setup_defaults()</code></pre>
+</div>
+</div>
+
+<!-- Question 31 -->
+<div class="quiz-question">
+    <p>31. Which line of code correctly creates an object of a class named Person?</p>
+    <pre>class Person:
+    def __init__(self, name):
+        self.name = name</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Person.create("Aman")</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) Person = ("Aman")</li>
+        <li onclick="checkAnswer(this, 'correct')">C) p = Person("Aman")</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) p = new Person("Aman")</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Correct object instantiation
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+p = Person("Aman")  # Proper way to create an instance
+print(p.name)       # Output: Aman</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates the correct way to create an instance of a class in Python.</p>
+
+    <h4>✅ Proper Instantiation:</h4>
+    <ul>
+        <li>Class name is called like a function <strong>Person()</strong></li>
+        <li>Arguments match the <strong>__init__</strong> parameters (excluding <strong>self</strong>)</li>
+        <li>Returns a new instance which can be assigned to a variable</li>
+    </ul>
+
+    <h4>🔍 What Happens When Creating an Instance:</h4>
+    <ol>
+        <li>Python first calls <strong>__new__()</strong> to create the object</li>
+        <li>Then calls <strong>__init__()</strong> to initialize it</li>
+        <li>Finally returns the initialized object</li>
+    </ol>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Issue</th>
+            <th>In Language</th>
+        </tr>
+        <tr>
+            <td>Person.create("Aman")</td>
+            <td>No such method exists unless defined</td>
+            <td>❌ Python</td>
+        </tr>
+        <tr>
+            <td>Person = ("Aman")</td>
+            <td>Just creates a string variable</td>
+            <td>❌ Python</td>
+        </tr>
+        <tr>
+            <td>new Person("Aman")</td>
+            <td><strong>new</strong> keyword not used</td>
+            <td>✅ Java/C++<br>❌ Python</td>
+        </tr>
+    </table>
+
+    <h4>💡 Key Differences from Other Languages:</h4>
+    <ul>
+        <li>No <strong>new</strong> keyword needed (unlike Java/C#/C++)</li>
+        <li>Constructor call looks like a regular function call</li>
+        <li>Initialization is separate from object creation (<strong>__new__</strong> vs <strong>__init__</strong>)</li>
+    </ul>
+
+    <h4>🔧 Alternative Creation Patterns:</h4>
+    <pre><code># Using a class method as alternative constructor
+class Person:
+    @classmethod
+    def from_dict(cls, data):
+        return cls(data['name'])
+
+p = Person.from_dict({"name": "Aman"})</code></pre>
+</div>
+</div>
+
+<!-- Question 31 -->
+<div class="quiz-question">
+    <p>31. Which of the following statements is true about classes and objects in Python?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) A class is an object created from an instance.</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) An object is a blueprint used to create classes.</li>
+        <li onclick="checkAnswer(this, 'correct')">C) A class defines the structure and behavior of its objects.</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Classes and objects are the same thing in Python.</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Class and object example
+class Car:
+    def __init__(self, make, model):
+        self.make = make    # Attribute
+        self.model = model  # Attribute
+    
+    def display(self):      # Method
+        print(f"{self.make} {self.model}")
+
+my_car = Car("Toyota", "Camry")  # Object instance
+my_car.display()  # Output: Toyota Camry</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates the relationship between classes and objects in Python.</p>
+
+    <h4>✅ Correct Understanding:</h4>
+    <ul>
+        <li><strong>Class</strong> is the blueprint/template (defines structure and behavior)</li>
+        <li><strong>Object</strong> is an instance created from the class (has actual data)</li>
+        <li>One class can create many objects (instances)</li>
+    </ul>
+
+    <h4>🔍 Class vs Object:</h4>
+    <table>
+        <tr>
+            <th></th>
+            <th>Class</th>
+            <th>Object</th>
+        </tr>
+        <tr>
+            <td><strong>Nature</strong></td>
+            <td>Blueprint/Template</td>
+            <td>Concrete Instance</td>
+        </tr>
+        <tr>
+            <td><strong>Memory</strong></td>
+            <td>Exists once</td>
+            <td>New memory per instance</td>
+        </tr>
+        <tr>
+            <td><strong>Example</strong></td>
+            <td><strong>Car</strong> class</td>
+            <td><strong>my_car</strong> instance</td>
+        </tr>
+    </table>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Correction</th>
+        </tr>
+        <tr>
+            <td>A) Class from object</td>
+            <td>Object from class</td>
+        </tr>
+        <tr>
+            <td>B) Object as blueprint</td>
+            <td>Class is blueprint</td>
+        </tr>
+        <tr>
+            <td>D) Same thing</td>
+            <td>Related but distinct</td>
+        </tr>
+    </table>
+
+    <h4>💡 Real-world Analogy:</h4>
+    <ul>
+        <li><strong>Class</strong> = Cookie cutter</li>
+        <li><strong>Object</strong> = Actual cookies</li>
+        <li>One cutter (class) can make many cookies (objects)</li>
+        <li>All cookies share the same shape (attributes/methods) but can have different decorations (data)</li>
+    </ul>
+</div>
+</div>
+
+<!-- Question 32 -->
+<div class="quiz-question">
+    <p>32. What does the following line of code do?</p>
+    <pre>car1 = Car("Tesla")
+Assuming Car is a class with an __init__() method.</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) It declares a class.</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) It defines a method inside a class.</li>
+        <li onclick="checkAnswer(this, 'correct')">C) It creates an object of the Car class.</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) It creates a function called car1.</li>
+    </ul>
+
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Object creation example
+class Car:
+    def __init__(self, brand):
+        self.brand = brand
+
+car1 = Car("Tesla")  # Creates a Car object
+print(type(car1))    # Output: &lt;class '__main__.Car'&gt;
+print(car1.brand)    # Output: Tesla</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates object instantiation in Python - creating a concrete instance from a class blueprint.</p>
+
+    <h4>🔍 What <strong>car1 = Car("Tesla")</strong> Does:</h4>
+    <ol>
+        <li>Python calls <strong>Car.__new__()</strong> to create a new object</li>
+        <li>Then calls <strong>Car.__init__("Tesla")</strong> to initialize it</li>
+        <li>Assigns the new object to variable <strong>car1</strong></li>
+        <li>The object now exists with its own attributes and methods</li>
+    </ol>
+
+    <h4>✅ Key Characteristics:</h4>
+    <ul>
+        <li><strong>car1</strong> is now an <strong>instance</strong> of the <strong>Car</strong> class</li>
+        <li>It has its own namespace containing attributes</li>
+        <li>It can access all methods defined in the class</li>
+        <li>Multiple instances can be created from one class</li>
+    </ul>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Actual Meaning</th>
+            <th>Evidence</th>
+        </tr>
+        <tr>
+            <td>A) Declares class</td>
+            <td>Class declaration uses <strong>class</strong> keyword</td>
+            <td><strong>class Car:</strong> is the declaration</td>
+        </tr>
+        <tr>
+            <td>B) Defines method</td>
+            <td>Methods are defined with <strong>def</strong> inside class</td>
+            <td>This line is outside any class</td>
+        </tr>
+        <tr>
+            <td>D) Creates function</td>
+            <td>Functions are created with <strong>def</strong></td>
+            <td><strong>type(car1)</strong> shows it's an object</td>
+        </tr>
+    </table>
+
+    <h4>💡 Memory Diagram:</h4>
+    <pre>
+    Car Class
+    +------------+
+    | __init__() |
+    | methods    |
+    +------------+
+            ↑
+            | Instance
+    +------------+
+    | brand: Tesla|
+    +------------+
+      (car1 object)
+    </pre>
+
+    <h4>🔧 Creating Multiple Objects:</h4>
+    <pre><code>car2 = Car("Ford")   # Another instance
+car3 = Car("BMW")   # Yet another instance
+# All are separate objects with their own brand</code></pre>
+</div>
+</div>
+
+<!-- Question 33 -->
+<div class="quiz-question">
+    <p>33. You want to ask a user for two numbers and display their sum.</p>
+    <p>Which line correctly prints:</p>
+    <pre>The total is: 15
+If user enters 7 and 8?</pre>
+    <pre>num1 = input("Enter first number: ")
+num2 = input("Enter second number: ")
+# missing line</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) print("The total is: " + num1 + num2)</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) print("The total is: " + str(num1 + num2))</li>
+        <li onclick="checkAnswer(this, 'correct')">C) print("The total is: " + str(int(num1) + int(num2)))</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) print("The total is: " + int(num1 + num2))</li>
+    </ul>
+
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Correct number input and addition
+num1 = input("Enter first number: ")  # e.g., "7"
+num2 = input("Enter second number: ") # e.g., "8"
+
+# Proper conversion and concatenation
+print("The total is: " + str(int(num1) + int(num2)))  # Output: The total is: 15</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates proper handling of numeric input and string concatenation in Python.</p>
+
+    <h4>✅ Correct Approach:</h4>
+    <ol>
+        <li><strong>Convert inputs to integers:</strong> <strong>int(num1)</strong> and <strong>int(num2)</strong></li>
+        <li><strong>Perform numeric addition:</strong> <strong>int(num1) + int(num2)</strong></li>
+        <li><strong>Convert back to string:</strong> <strong>str(15)</strong> becomes "15"</li>
+        <li><strong>Concatenate with message:</strong> <strong>"The total is: " + "15"</strong></li>
+    </ol>
+
+    <h4>❌ Why Other Options Fail:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>What Happens</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>A) num1 + num2</td>
+            <td>String concatenation "7" + "8"</td>
+            <td>"78" (wrong)</td>
+        </tr>
+        <tr>
+            <td>B) str(num1 + num2)</td>
+            <td>Still does string addition first</td>
+            <td>"78" (wrong)</td>
+        </tr>
+        <tr>
+            <td>D) int(num1 + num2)</td>
+            <td>Makes "78" then converts to 78</td>
+            <td>TypeError (can't add str + int)</td>
+        </tr>
+    </table>
+
+    <h4>💡 Best Practices:</h4>
+    <ul>
+        <li>Always convert <strong>input()</strong> to numbers before math operations</li>
+        <li>Use <strong>try-except</strong> to handle invalid number inputs</li>
+        <li>f-strings often make concatenation cleaner:</li>
+    </ul>
+
+    <pre><code># Alternative using f-string (Python 3.6+)
+print(f"The total is: {int(num1) + int(num2)}")</code></pre>
+
+    <h4>🔧 Error Handling Example:</h4>
+    <pre><code>try:
+    total = int(num1) + int(num2)
+    print(f"The total is: {total}")
+except ValueError:
+    print("Please enter valid numbers!")</code></pre>
+</div>
+</div>
+
+<!-- Question 34 -->
+<div class="quiz-question">
+    <p>34. You want to display a message like:</p>
+    <pre>You were born in 2000!</pre>
+    <p>Which line correctly completes this code?</p>
+    <pre>current_year = 2024
+age = input("Enter your age: ")
+# missing line</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) print("You were born in " + current_year - int(age) + "!")</li>
+        <li onclick="checkAnswer(this, 'correct')">B) print("You were born in " + str(current_year - int(age)) + "!")</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) print("You were born in " + int(current_year - age) + "!")</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) print("You were born in", current_year - age + "!")</li>
+    </ul>
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Age to birth year calculator
+current_year = 2024
+age = input("Enter your age: ")
+
+# Correct implementation
+print("You were born in " + str(current_year - int(age)) + "!")</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates proper type conversion and string concatenation for calculating birth year from age.</p>
+
+    <h4>✅ Correct Approach:</h4>
+    <ol>
+        <li><strong>Convert age to integer:</strong> <code>int(age)</code></li>
+        <li><strong>Calculate birth year:</strong> <code>current_year - int(age)</code></li>
+        <li><strong>Convert result to string:</strong> <code>str(birth_year)</code></li>
+        <li><strong>Concatenate with message:</strong> <code>"You were born in " + "2000" + "!"</code></li>
+    </ol>
+
+    <h4>❌ Why Other Options Fail:</h4>
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>What Happens</th>
+            <th>Error</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>"text" + current_year - int(age)</td>
+            <td>Can't subtract from string</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>int(current_year - age)</td>
+            <td>Can't subtract string from int</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>current_year - age + "!"</td>
+            <td>Mixed type operations</td>
+        </tr>
+    </table>
+
+    <h4>💡 Better Alternatives:</h4>
+    <pre><code># Using f-strings (Python 3.6+)
+print(f"You were born in {current_year - int(age)}!")
+
+# Using .format()
+print("You were born in {}!".format(current_year - int(age)))</code></pre>
+
+    <h4>🔧 Error Handling Version:</h4>
+    <pre><code>try:
+    birth_year = current_year - int(age)
+    print(f"You were born in {birth_year}!")
+except ValueError:
+    print("Please enter a valid number for age!")</code></pre>
+</div>
+</div>
+
+<!-- Question 35 -->
+<div class="quiz-question">
+    <p>35. What is the output of the following code?</p>
+    <pre>x = [1, 2, 3]
+print(type(x))</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) &lt;class 'tuple'&gt;</li>
+        <li onclick="checkAnswer(this, 'correct')">B) &lt;class 'list'&gt;</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) &lt;class 'array'&gt;</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) &lt;class 'set'&gt;</li>
+    </ul>
+
+    <button class="show-answer" onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer" style="display: none;">
+    <pre><code># Checking list type
+x = [1, 2, 3]
+print(type(x))  # Output: &lt;class 'list'&gt;</code></pre>
+
+    <h4>🧠 Explanation:</h4>
+    <p>This demonstrates how to check an object's type in Python using the <strong>type()</strong> function.</p>
+
+    <h4>✅ Key Points:</h4>
+    <ul>
+        <li><strong>[1, 2, 3]</strong> creates a <strong>list</strong> object</li>
+        <li>Lists are ordered, mutable collections</li>
+        <li>Created with square brackets <strong>[]</strong></li>
+        <li><strong>type()</strong> returns the class of an object</li>
+    </ul>
+
+    <h4>🔍 Python Collection Types:</h4>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Syntax</th>
+            <th>Example</th>
+            <th>Mutability</th>
+        </tr>
+        <tr>
+            <td>List</td>
+            <td><code>[]</code></td>
+            <td><code>[1, 2, 3]</code></td>
+            <td>Mutable</td>
+        </tr>
+        <tr>
+            <td>Tuple</td>
+            <td><strong>()</strong></td>
+            <td><strong>(1, 2, 3)</strong></td>
+            <td>Immutable</td>
+        </tr>
+        <tr>
+            <td>Set</td>
+            <td><strong>{}</strong></td>
+            <td><strong>{1, 2, 3}</strong></td>
+            <td>Mutable</td>
+        </tr>
+        <tr>
+            <td>Dictionary</td>
+            <td><strong>{}</strong></td>
+            <td><strong>{"a":1, "b":2}</strong></td>
+            <td>Mutable</td>
+        </tr>
+    </table>
+
+    <h4>❌ Why Other Options Are Incorrect:</h4>
+    <ul>
+        <li><strong>Tuple:</strong> Uses parentheses <strong>()</strong>, not square brackets</li>
+        <li><strong>Array:</strong> Not a built-in type (requires <strong>import array</strong>)</li>
+        <li><strong>Set:</strong> Uses curly braces <strong>{}</strong> and doesn't maintain order</li>
+    </ul>
+
+    <h4>💡 Practical Uses of type():</h4>
+    <pre><code># Type checking in code
+if type(x) == list:
+    print("It's a list!")
+
+# Alternative using isinstance()
+if isinstance(x, list):
+    print("x is a list")</code></pre>
+</div>
+</div>
+
+<!-- Question 36 -->
+<div class="quiz-question">
+    <p>36. What is the output of the following code?</p>
+    <pre>a = {'name': 'Aman', 'age': 22}
+print(type(a))</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) &lt;class 'set'&gt;</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) &lt;class 'list'&gt;</li>
+        <li onclick="checkAnswer(this, 'correct')">C) &lt;class 'dict'&gt;</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) &lt;class 'tuple'&gt;</li>
+    </ul>
+</div>
+
+<!-- Question 37 -->
+<div class="quiz-question">
+    <p>37. Which of the following code snippets will store an integer value in the variable result without any decimal points?</p>
+    <p>Assume:</p>
+    <pre>a = 50  
+b = 6</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) result = a / b</li>
+        <li onclick="checkAnswer(this, 'correct')">B) result = int(a / b)</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) result = float(a // b)</li>
+        <li onclick="checkAnswer(this, 'correct')">D) result = a // b</li>
+    </ul>
+</div>
+
+<!-- Question 38 -->
+<div class="quiz-question">
+    <p>38. What is the result of the following code?</p>
+    <pre>x = 49
+y = 5
+print(int(x / y))</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 9.8</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 9</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 10</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error</li>
+    </ul>
+</div>
+
+<!-- Question 39 -->
+<div class="quiz-question">
+    <p>39. You are checking if two lists are exactly the same. Which of the following code snippets correctly prints whether the lists are equal or not?</p>
+    <pre>list1 = [10, 20, 30]
+list2 = [10, 20, 30]</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) if list1 == list2: 
+    print("Lists are not equal")
+else:
+    print("Lists are equal")</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) if list1 != list2:
+    print("Lists are not equal")
+else:
+    print("Lists are equal")</li>
+        <li onclick="checkAnswer(this, 'correct')">C) if list1 == list2:
+    print("Lists are equal")
+else:
+    print("Lists are not equal")</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) if list1 = list2:
+    print("Lists are equal")</li>
+    </ul>
+</div>
+<div class="quiz-question">
+    <p>Select the code segment(s) that print the output without decimal points.</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) average_speed = float(total_distance // time)</li>
+        <li onclick="checkAnswer(this, 'correct')">B) average_speed = total_distance // time</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) average_speed = total_distance / time</li>
+        <li onclick="checkAnswer(this, 'correct')">D) average_speed = int(total_distance / time)</li>
+    </ul>
+</div>
+<!-- Question 40 -->
+<div class="quiz-question">
+    <p>40. What will the following code print?</p>
+    <pre>colors1 = ["red", "green", "blue"]
+colors2 = ["red", "green", "yellow"]
+
+if colors1 == colors2:
+    print("Color lists match")
+else:
+    print("Color lists differ")</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Color lists match</li>
+        <li onclick="checkAnswer(this, 'correct')">B) Color lists differ</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) True</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error</li>
+    </ul>
+</div>
+
+<!-- Question 41 -->
+<div class="quiz-question">
+    <p>41. Which of the following is a valid single-line comment in Python?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) // This is a comment</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) &lt;!-- This is a comment --&gt;</li>
+        <li onclick="checkAnswer(this, 'correct')">C) # This is a comment</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) /* This is a comment */</li>
+    </ul>
+</div>
+
+<!-- Question 42 -->
+<div class="quiz-question">
+    <p>42. Which of the following statements about comments in Python is true?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Python does not support multi-line comments</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) Python uses triple quotes (''' ''' or """ """) for official multi-line comments</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) All Python comments must start with double slashes (//)</li>
+        <li onclick="checkAnswer(this, 'correct')">D) Comments are ignored by the Python interpreter during execution</li>
+    </ul>
+</div>
+
+<!-- Question 43 -->
+<div class="quiz-question">
+    <p>43. Which of the following creates a tuple in Python?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) my_data = [10, 20, 30]</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) my_data = {10, 20, 30}</li>
+        <li onclick="checkAnswer(this, 'correct')">C) my_data = (10, 20, 30)</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) my_data = "10, 20, 30"</li>
+    </ul>
+</div>
+
+<!-- Question 44 -->
+<div class="quiz-question">
+    <p>44. Which of the following is a mutable data structure in Python?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) tuple</li>
+        <li onclick="checkAnswer(this, 'correct')">B) list</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) str</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) int</li>
+    </ul>
+</div>
+
+<!-- Question 45 -->
+<div class="quiz-question">
+    <p>45. What is the output of the following code?</p>
+    <pre>type(1334E452)
+type(145)
+type(17.235)
+type("True")
+type("Alpha")</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) &lt;class 'float'&gt;, &lt;class 'int'&gt;, &lt;class 'float'&gt;, &lt;class 'str'&gt;, &lt;class 'str'&gt;</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) &lt;class 'int'&gt;, &lt;class 'int'&gt;, &lt;class 'float'&gt;, &lt;class 'bool'&gt;, &lt;class 'str'&gt;</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) &lt;class 'float'&gt;, &lt;class 'float'&gt;, &lt;class 'float'&gt;, &lt;class 'str'&gt;, &lt;class 'str'&gt;</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Error</li>
+    </ul>
+</div>
+
+<!-- Question 46 -->
+<div class="quiz-question">
+    <p>46. Which of the following expressions evaluates to &lt;class 'bool'&gt;?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) type("False")</li>
+        <li onclick="checkAnswer(this, 'correct')">B) type(False)</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) type("True")</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) type("0")</li>
+    </ul>
+</div>
+
+<!-- Question 47 -->
+<div class="quiz-question">
+    <p>47. What is the output of the following code?</p>
+    <pre>x = 5
+y = x // 2
+
+if y > 2:
+    z = 10
+elif y == 2:
+    z = 20
+else:
+    z = 30
+
+print(x + y + z)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 37</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) 35</li>
+        <li onclick="checkAnswer(this, 'correct')">C) 38</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 36</li>
+    </ul>
+</div>
+
+<!-- Question 48 -->
+<div class="quiz-question">
+    <p>48. What will the following Python code output?</p>
+    <pre>a = 2
+b = 3
+
+if a * b == 6:
+    c = 1
+elif a + b == 6:
+    c = 2
+else:
+    c = 3
+
+print(a + b + c)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 5</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 6</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 7</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 8</li>
+    </ul>
+</div>
+
+<!-- Question 49 -->
+<div class="quiz-question">
+    <p>49. What happens when the following code is executed, assuming data.txt does not exist?</p>
+    <pre>f = open("data.txt", "r")
+f.close()</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) It creates the file data.txt</li>
+        <li onclick="checkAnswer(this, 'correct')">B) It raises a FileNotFoundError</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) It opens the file in read mode</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) It clears the contents of data.txt</li>
+    </ul>
+</div>
+
+<!-- Question 50 -->
+<div class="quiz-question">
+    <p>50. What does the following code do?</p>
+    <pre>f = open("log.txt", "a")
+f.write("New log entry\n")
+f.close()</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Overwrites the content of log.txt</li>
+        <li onclick="checkAnswer(this, 'correct')">B) Appends the text if the file exists</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Raises an error if the file doesn't exist</li>
+        <li onclick="checkAnswer(this, 'correct')">D) Creates the file if it doesn't exist and appends the text</li>
+    </ul>
+</div>
+<div class="quiz-question">
+    <p> You develop a Python application for your company. How should you complete the code so that the print statements are accurate?</p>
+    <pre>
+numList = [1, 2, 3, 4, 5]
+alphaList = ["a", "b", "c", "d", "e"]
+
+1. ____________________
+print("The values in numList are not equal to alphaList")
+
+2. ____________________
+print("The values in numList are equal to alphaList")
+    </pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">
+            A) 1. if numList == alphaList:<br>2. else:
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            B) 1. if numList != alphaList:<br>2. if alphaList:
+        </li>
+        <li onclick="checkAnswer(this, 'wrong')">
+            C) 1. if numList == alphaList:<br>2. elif numList != alphaList:
+        </li>
+        <li onclick="checkAnswer(this, 'correct')">
+            D) 1. if numList != alphaList:<br>2. else:
+        </li>
+    </ul>
+</div>
+
+<!-- Question 51 -->
+<div class="quiz-question">
+    <p>51. What is the result of the following Python expression?</p>
+    <pre>result = 3 + 2 * 4
+print(result)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 20</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 11</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 13</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 24</li>
+    </ul>
+</div>
+
+<!-- Question 52 -->
+<div class="quiz-question">
+    <p>52. What is the output of the following expression?</p>
+    <pre>value = -2 ** 3
+print(value)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) -8</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) 8</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) -6</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Syntax Error</li>
+    </ul>
+</div>
+
+<!-- Question 53 -->
+<div class="quiz-question">
+    <p>53. You are writing a Python function that greets users.</p>
+    <p>If no name is provided, it should greet with "Guest".</p>
+    <pre>def greet(name):
+    print("Hello", name)
+
+greet()</pre>
+    <p>What should you change in the function definition to meet this requirement?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) def greet(name = "Guest"):</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) def greet("Guest"):</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) def greet(name):</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) def greet(name = Guest):</li>
+    </ul>
+</div>
+
+<!-- Question 54 -->
+<div class="quiz-question">
+    <p>54. What will be the output of the following code?</p>
+    <pre>def add(a, b=5):
+    return a + b
+
+print(add(3))
+print(add(3, 2))</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) 8 and 5</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) 3 and 2</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 8 and 5</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 8 and 5</li>
+    </ul>
+</div>
+
+<!-- Question 55 -->
+<div class="quiz-question">
+    <p>55. What will be the output of the following code?</p>
+    <pre>text = "Python is Fun!"
+print(text[7:9])</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) is </li>
+        <li onclick="checkAnswer(this, 'correct')">B) is</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) i</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) s</li>
+    </ul>
+</div>
+
+<!-- Question 56 -->
+<div class="quiz-question">
+    <p>56. What is the result of this string slice?</p>
+    <pre>msg = " Data Science with Python"
+print(msg[5:12])</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Science</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) cience</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Science</li>
+        <li onclick="checkAnswer(this, 'correct')">D) a Scien</li>
+    </ul>
+</div>
+<div class="quiz-question">
+    <p> Types of commenting available in Python?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Single line comments</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) Inline comments</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Multi-line comments</li>
+        <li onclick="checkAnswer(this, 'correct')">D) All of the above</li>
+    </ul>
+</div>
+
+<!-- Question 57 -->
+<div class="quiz-question">
+    <p>57. You are working with a file named data.txt. You want to print each line of the file without loading the entire file into memory at once.</p>
+    <p>Which of the following is the most memory-efficient method?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) file = open("data.txt"); print(file.readlines())</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) file = open("data.txt"); print(file.read())</li>
+        <li onclick="checkAnswer(this, 'correct')">C) file = open("data.txt")
+for line in file:
+    print(line)
+file.close()</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) file = open("data.txt"); print(file.line())</li>
+    </ul>
+</div>
+
+<!-- Question 58 -->
+<div class="quiz-question">
+    <p>58. You want to get all lines from sample.txt into a list of strings, where each element represents one line.</p>
+    <p>Which of the following will do that correctly?</p>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) lines = file.readlines()</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) lines = file.read()</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) lines = readlines(file)</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) lines = file.line()</li>
+    </ul>
+</div>
+
+<!-- Question 59 -->
+<div class="quiz-question">
+    <p>59. How many lines does the following code output?</p>
+    <pre>for i in range(0, 5, 2):
+    print("*", end="-")
+print("#")</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) 1</li>
+        <li onclick="checkAnswer(this, 'correct')">B) 2</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 3</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 5</li>
+    </ul>
+</div>
+
+<!-- Question 60 -->
+<div class="quiz-question">
+    <p>60. What is the output and how many lines are printed?</p>
+    <pre>for i in range(2):
+    print("Hi", end="*")
+    print("Bye")</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) 2 lines: Hi*Bye repeated</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) 4 lines</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) 2 lines: HiBye</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) 1 line: Hi*ByeHi*Bye</li>
+    </ul>
+</div>
+
+<!-- Question 61 -->
+<div class="quiz-question">
+    <p>61. What will be the output of the following code?</p>
+    <pre>text = "Programming"
+print(text[-11:6])</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) "Program"</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) "Progra"</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) "Progr"</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) "Pro"</li>
+    </ul>
+</div>
+
+<!-- Question 62 -->
+<div class="quiz-question">
+    <p>62. What happens when you run this code?</p>
+    <pre>greeting = "Good Morning"
+print(Greeting[0:4])</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) "Good"</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) "Goo"</li>
+        <li onclick="checkAnswer(this, 'correct')">C) NameError</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) "g"</li>
+    </ul>
+</div>
+
+<!-- Question 63 -->
+<div class="quiz-question">
+    <p>63. Arrange the code segments to check if a number is even or odd:</p>
+    <pre>A: else:
+B: num = int(input("Enter a number: "))
+C: if num % 2 == 0:
+D: print("Even")
+E: print("Odd")</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) B, C, A, E, D</li>
+        <li onclick="checkAnswer(this, 'correct')">B) B, C, D, A, E</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) C, D, A, E, B</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) B, A, C, D, E</li>
+    </ul>
+</div>
+
+<!-- Question 64 -->
+<div class="quiz-question">
+    <p>64. Arrange the code segments to calculate and print factorial of a number using a while loop:</p>
+    <pre>A: result = 1
+B: while n > 1:
+C: n = n - 1
+D: result = result * n
+E: n = int(input("Enter a number: "))
+F: print("Factorial is", result)</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) E, A, B, C, D, F</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) A, E, B, D, C, F</li>
+        <li onclick="checkAnswer(this, 'correct')">C) E, A, B, D, C, F</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) E, A, B, D, C, F</li>
+    </ul>
+</div>
+
+<!-- Question 65 -->
+<div class="quiz-question">
+    <p>65. What will be the output of the following code?</p>
+    <pre>x = 5
+while x > 2:
+    if x % 2 == 0:
+        print("Even")
+    elif x == 3:
+        print("Three")
+    else:
+        print("Odd")
+    x -= 1</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'correct')">A) Odd<br>Even<br>Three</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) Even<br>Odd<br>Three</li>
+        <li onclick="checkAnswer(this, 'wrong')">C) Odd<br>Odd<br>Three</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Odd<br>Even<br>Odd</li>
+    </ul>
+</div>
+
+<!-- Question 66 -->
+<div class="quiz-question">
+    <p>66. Predict the output of this code:</p>
+    <pre>count = 0
+while count < 3:
+    if count == 0:
+        print("Start")
+    elif count == 1:
+        print("Middle")
+    else:
+        print("End")
+    count += 1</pre>
+    <ul>
+        <li onclick="checkAnswer(this, 'wrong')">A) Start</li>
+        <li onclick="checkAnswer(this, 'wrong')">B) Start → Middle</li>
+        <li onclick="checkAnswer(this, 'correct')">C) Start → Middle → End</li>
+        <li onclick="checkAnswer(this, 'wrong')">D) Start → End → Middle</li>
+    </ul>
+</div>
